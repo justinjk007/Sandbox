@@ -4,7 +4,7 @@ class Sort(object):
         self.data = unsortedData
 
     def insertionSort(self):
-        print "Sorting started"
+        print "\nSorting started"
         global counter
         global swap
         counter = 0
@@ -14,7 +14,6 @@ class Sort(object):
             CurrentItem = self.data[i]
             # j is the divider of the sorted and unsorted portion
             j = i-1
-            print j
             while j >= 0 and self.data[j] > CurrentItem:
                 counter += 1
                 self.data[j+1] = self.data[j]  # Swap happens here.
@@ -27,12 +26,16 @@ class Sort(object):
 
 # def tester -> Tests the above code
 print "Testing started"
-unsorted = [547, 547, 547, 546, 545, 87, 54, 6, 5, 5, 0, -1, -78, -87]
+unsorted = [54,587,5,-545,545,47,2,-54,0,0,1,2]
+print ("Unsorted array: "),
+for val in unsorted:
+    print (str(val) + ","),
 obj = Sort(unsorted)
 sortedData = obj.insertionSort()
 print ("Lenth of the array is: "+str(len(sortedData)))
 print ("Number of comaprisons: "+str(counter))
 print ("Number of swaps: "+str(swap))
+print ("Sorted array: "),
 for val in sortedData:
     print (str(val) + ","),
 # The comma on the end of the line 26 makes the printing at the same line.
