@@ -45,14 +45,20 @@ def conflictChecker(row, column):
     for i in range(0, column):
         if(board[row][i] == 1):
             return False
-    for i in range(row, -1, -1):
-        for j in range(column, -1, -1):
-            if(board[i][j] == 1):
-                return False
-    for i in range(row, N):
-        for j in range(column, -1, -1):
-            if(board[i][j] == 1):
-                return False
+    i = row
+    j = column
+    while(i >= 0 and j >= 0):
+        if(board[i][j] == 1):
+            return False
+        j -= 1
+        i -= 1
+    i = row
+    j = column
+    while(i >= 0 and i < N):
+        if(board[i][j] == 1):
+            return False
+        j -= 1
+        i += 1
     return True  # There are no conflicts
 
 
@@ -74,7 +80,7 @@ def draw():
 
 # N = input("Please enter the value of N: ")
 # print N
-N = 5
+N = 8
 for i in range(0, N):
     board.append([0]*N)
 
