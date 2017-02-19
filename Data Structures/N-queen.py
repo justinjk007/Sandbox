@@ -7,7 +7,6 @@ Purpose : This program solves the N-queen problem in the recurive and the
           iterative way. Backtracking algorithm has been implmented here
 '''
 
-count = 0  # This is the placed queen counter
 board = []  # This is the global array that store the queen
 
 
@@ -21,62 +20,54 @@ def iterativeMethodAllSolution():
     return 0
 
 
-def recursiveMethod(n):
+def recursiveMethod(column, size):
     "This solves the N-queen problem in the recursive way"
-
-    return 0
+    global board
+    global N
+    for i in range(0, size):
+        if(conflictChecker(i, column)):
+            board[i][column] = 1
+            if(recursiveMethod(column+1, size)):
+                return True
+            board[i][column] = 0
+    return False
 
 
 def recursiveMethodAllSolution(board):
     "This solves the N-queen problem in the recursive way for all the solution"
-    global count
-    if (count != N):
-        for i in range(0, N):
-            for j in range(0, N):
-                board[i][j] = "Q "  # Here we are assigining the queen & then sending it for checking
-                count += 1
-                if(conflictChecker(i, j)):
-                    board[i][j] = "O "  # If there is a conflict we assign back the default charecter
-                    count -= 1
-                else:
-                    pass  # There are no conflicts so we can continue
-    else:
-        return board
+    return 0
 
 
 def conflictChecker(row, column):
     "This funtion checks for conflicts with other queens currently in the board"
-    if(not(row == 0 and column == 0)):
-        '''
-        If row and coloumns are equal to 0, then there won't be any
-        conflicts because we are only begining here, so skip and return
-        true
-        '''
-        for i in range(0, column):
-            if(board[row][i] == "Q "):
-                return True
-
-        for i in range(row, -1, -1):
-            for j in range(column, -1, -1):
-                if(board[i][j] == "Q "):
-                    return True
-
-        for i in range(row, N):
-            for j in range(column, -1, -1):
-                if(board[i][j] == "Q "):
-                    return True
-    return False  # There are no conflicts
+    global board
+    global N
+    for i in range(0, column):
+        if(board[row][i] == 1):
+            return False
+    for i in range(row, -1, -1):
+        for j in range(column, -1, -1):
+            if(board[i][j] == 1):
+                return False
+    for i in range(row, N):
+        for j in range(column, -1, -1):
+            if(board[i][j] == 1):
+                return False
+    return True  # There are no conflicts
 
 
 def draw():
     "This method is used to draw the solved problem into human readable way"
+    global board
+    global N
     print "\n"
     print "The Q represents the queens"
     print "---------------------------------------"
+    print "\n"
     for i in range(0, N):
         print "|",
         for j in range(0, N):
-            print board[i][j] + "|",
+            print str(board[i][j]) + "|",
         print "\n"
     print "---------------------------------------"
 
@@ -85,8 +76,9 @@ def draw():
 # print N
 N = 5
 for i in range(0, N):
-    board.append(["O "]*N)
+    board.append([0]*N)
 
+recursiveMethod(0, N)
 draw()
 
 # http://stackoverflow.com/questions/4818201/n-queen-problem-in-python
