@@ -98,3 +98,5 @@ public class queen {
     }
 }
 // http://stackoverflow.com/questions/18610003/can-we-solve-n-queens-without-backtracking-and-how-to-calculate-and-what-will-b
+
+// https://www.cs.usfca.edu/~galles/visualization/RecQueens.html
