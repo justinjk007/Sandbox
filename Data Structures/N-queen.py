@@ -52,17 +52,19 @@ def conflictChecker(row, column):
         conflicts because we are only begining here, so skip and return
         true
         '''
-        for i in range(0, N):  # This loop checks for conflicts diagonally
-            if(board[row][column] == board[i][i]):
-                return True  # There are conflicts
-            else:
-                pass
-        for i in range(0, N):  # This loop checks for conflicts in each row and coloumn
-            for j in range(0, N):
-                if(board[row][j] == board[row][column] or board[i][column] == board[row][column]):
-                    return True  # There are conflicts
-                else:
-                    pass
+        for i in range(0, column):
+            if(board[row][i] == "Q "):
+                return True
+
+        for i in range(row, -1, -1):
+            for j in range(column, -1, -1):
+                if(board[i][j] == "Q "):
+                    return True
+
+        for i in range(row, N):
+            for j in range(column, -1, -1):
+                if(board[i][j] == "Q "):
+                    return True
     return False  # There are no conflicts
 
 
