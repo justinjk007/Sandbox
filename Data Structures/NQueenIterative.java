@@ -15,7 +15,7 @@ public class NQueenIterative
             {
                 while(coloumn < N)
                     {
-                        System.out.println(row+" "+coloumn);
+                        // System.out.println(row+" "+coloumn);
                         if (conflictCheck(board, row, coloumn))
                             {
                                 // If there is no conflicts place the queen
@@ -25,8 +25,8 @@ public class NQueenIterative
                                 lastRow.push(row);
                                 coloumn++;
                                 row = 0;
-                                System.out.println("Queen Placed");
-                                System.out.println("Queencount now is "+queenCount);
+                                // System.out.println("Queen Placed");
+                                // System.out.println("Queencount now is "+queenCount);
                                 if(queenCount == N)
                                     return false; // We have a solution
                             }
@@ -34,15 +34,15 @@ public class NQueenIterative
                             row++;
                         else if(row == N-1)
                             {
-                                System.out.println("Backtracking");
+                                // System.out.println("Backtracking");
                                 if(!lastRow.empty() && !lastCol.empty())
                                     {
                                         Integer temp1 = (Integer) lastRow.pop();
                                         Integer temp2 = (Integer) lastCol.pop();
-                                        System.out.println(temp1+" "+temp2);
+                                        // System.out.println(temp1+" "+temp2);
                                         board[temp1][temp2] = 0;
                                         queenCount--;
-                                        System.out.println("Queen Removed");
+                                        // System.out.println("Queen Removed");
                                         coloumn = temp2;
                                         row = temp1;
                                         if(row < N-1) 
@@ -51,9 +51,9 @@ public class NQueenIterative
                                             {
                                                 temp1 = (Integer) lastRow.pop();
                                                 temp2 = (Integer) lastCol.pop();
-                                                System.out.println(temp1+" "+temp2);
+                                                // System.out.println(temp1+" "+temp2);
                                                 board[temp1][temp2] = 0;
-                                                System.out.println("Queen Removed");
+                                                // System.out.println("Queen Removed");
                                                 coloumn = temp2;
                                                 row = temp1+1;
                                                 queenCount--;
@@ -106,7 +106,8 @@ public class NQueenIterative
     
     public static void main(String[] args)
     {
-        System.out.println("N-queen solution calculated for N="+N);
+        N=9;
+        System.out.println("N-queen solution calculated for N="+N + " using iteration");
         System.out.println("");
         int[][] board = new int[N][N];
 
