@@ -1,9 +1,8 @@
-import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class queen {
-    static Scanner scan;
+public class queen
+{
     static int N = 4;
 	
     static void drawLayout(int board[][])
@@ -17,22 +16,6 @@ public class queen {
 			System.out.print("_   ");
 		System.out.println("\n");
 	    }
-    }
-
-    static boolean recursiveSolution(int board[][], int coloumn) {
-	if (coloumn >= N)
-	    return true; // This is our base case
-	for (int i = 0; i < N; i++)
-	    {
-		if (conflictCheck(board, i, coloumn))
-		    {
-			board[i][coloumn] = 1;
-			if (recursiveSolution(board, coloumn + 1))
-			    return true;
-			board[i][coloumn] = 0; // We are backtracking here
-		    }
-	    }
-	return false; // This statement is returned, when no solutions are found
     }
 
     static boolean conflictCheck(int board[][], int row, int coloumn)
@@ -99,29 +82,10 @@ public class queen {
     
     public static void main(String[] args)
     {
-	scan = new Scanner(System.in);
-	System.out.println("State the value of N in this program!");
-	N = scan.nextInt();
-	System.out.println("");
+	System.out.println("N-queen solution calculated for N="+N);
 	System.out.println("");
 	int[][] board = new int[N][N];
 
-	// if (!recursiveSolution(board, 0)) { 
-	//     System.out.println("Solution not found.");
-	// }
-	// drawLayout(board);
-
-	// for(int i =0; i < N; i++)
-	//     {
-	//         for(int[] eachRow: board)
-	//             Arrays.fill(eachRow,0); // Resets the array every loop
-	//         if (recursiveSolution(board, i))
-	//             {
-	//                 drawLayout(board);
-	//                 System.out.println("-------------------------------------------------------");
-	//             }
-	//     }
-	
 	if (iterativeSolution(board)) { 
 	    System.out.println("Solution not found.");
 	}
@@ -130,8 +94,3 @@ public class queen {
 
     } // End of main method
 }
-
-
-// http://stackoverflow.com/questions/18610003/can-we-solve-n-queens-without-backtracking-and-how-to-calculate-and-what-will-b
-
-// https://www.cs.usfca.edu/~galles/visualization/RecQueens.html
