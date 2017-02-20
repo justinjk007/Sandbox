@@ -27,42 +27,39 @@ public class NQueenIterative
                                 row = 0;
                                 System.out.println("Queen Placed");
                                 if(queenCount == N)
-                                    return false; // We have a soltion
+                                    return false; // We have a solution
                             }
-                        else if(row == N-1)
-                            {
-                                if(!lastRow.empty() && !lastCol.empty())
-                                    {
-                                        Integer temp1 = (Integer) lastRow.pop();
-                                        Integer temp2 = (Integer) lastCol.pop();
-                                        queenCount--;
-                                        coloumn = temp2;
-                                        if(row < N) 
-                                            row = temp1+1;
-                                        else
-                                            row = 0;
-                                        System.out.println(row-1+" "+coloumn);
-                                        System.out.println("Queen Removed");
-                                        board[temp1][temp2] = 0;
-                                    }
-                                else
-                                    System.out.println("Unimaginable error");
-                            }
-                        else
-                            {
-                                if(row < N-1) 
-                                    row++;
-                                else
-                                    row = 0;
-                            }
-                    }
-            }
-        return true; // This statement is returned, when no solutions are found
+			else if(row < N-1)
+			    row++;
+			else if(row == N)
+			    {
+				if(!lastRow.empty() && !lastCol.empty())
+				    {
+					Integer temp1 = (Integer) lastRow.pop();
+					Integer temp2 = (Integer) lastCol.pop();
+					coloumn = temp2;
+					if(row < N-1) 
+					    row = temp1+1;
+					else
+					    row = 0;
+					System.out.println(row-1+" "+coloumn);
+					System.out.println("Queen Removed");
+					queenCount--;
+					board[temp1][temp2] = 0;
+				    }
+				else
+				    System.out.println("Unimaginable error");
+			    }
+			else // When row = N
+			    row = 0;
+		    }
+	    }
+	return true; // This statement is returned, when no solutions are found
     } 
 
     static void drawLayout(int board[][])
     {
-        for (int i = 0; i < N; i++)
+	for (int i = 0; i < N; i++)
 	    {
 		for (int j = 0; j < N; j++)
 		    if (board[i][j] == 1)
