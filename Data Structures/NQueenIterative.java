@@ -1,10 +1,61 @@
-import java.util.Arrays;
-import java.util.Stack;
+import java.util.*;
 
-public class queen
+public class NQueenIterative
 {
-    static int N = 4;
-	
+    static int N = 6;
+
+    static boolean iterativeSolution(int board[][]) 
+    {
+	Stack lastRow = new Stack();
+	Stack lastCol = new Stack();
+	int queenCount = 0;
+	int row = 0;
+	int coloumn = 0;
+	while(row < N)
+	    {
+		while(coloumn < N)
+		    {
+			System.out.println(row+" "+coloumn);
+			if (conflictCheck(board, row, coloumn))
+			    {
+				// If there is no conflicts place the queen
+				board[row][coloumn] = 1;
+				queenCount++;
+				lastCol.push(coloumn);
+				lastRow.push(row);
+				coloumn++;
+				row = 0;
+				System.out.println("Queen Placed");
+				if(queenCount == N)
+				    return false; // We have a soltion
+			    }
+			else if(row == N)
+			    {
+				if(!lastRow.empty() && !lastCol.empty())
+				    {
+					Integer temp1 = (Integer) lastRow.pop();
+					Integer temp2 = (Integer) lastCol.pop();
+					board[temp1][temp2] = 0;
+					System.out.println("Queen Removed");
+					queenCount--;
+					coloumn = temp2;
+					row = temp1+1;
+				    }
+				else
+				    System.out.println("Unimaginable error");
+			    }
+			else
+			    {
+				if(row < N-1) 
+				    row++;
+				else
+				    row = 0;
+			    }
+		    }
+	    }
+	return true; // This statement is returned, when no solutions are found
+    } 
+
     static void drawLayout(int board[][])
     {
         for (int i = 0; i < N; i++)
@@ -36,49 +87,6 @@ public class queen
 	return true; //No conflicts are occuring, queen can be placed
     }
 
-    static boolean iterativeSolution(int board[][]) 
-    {
-	int queenCount = 0;
-	int lastCol = 0;
-	int lastRow = 0;
-	int row = 0;
-	int coloumn = 0;
-	while(row < N)
-	    {
-		while(coloumn < N)
-		    {
-			System.out.println(row+" "+coloumn);
-			if (conflictCheck(board, row, coloumn))
-			    {
-				// If there is no conflicts place the queen
-				board[row][coloumn] = 1;
-				queenCount++;
-				lastCol = coloumn;
-				lastRow = row;
-				coloumn++;
-				System.out.println("Queen Placed");
-				if(queenCount == N)
-				    return false; // We have a soltion
-			    }
-			else if(row == N)
-			    {
-				board[lastRow][lastCol] = 0;
-				System.out.println("Queen Removed");
-				queenCount--;
-				coloumn = lastCol+1;
-				row = lastRow;
-			    }
-			else
-			    {
-				if(row < N-1) 
-				    row++;
-				else
-				    row = 0;
-			    }
-		    }
-	    }
-	return true; // This statement is returned, when no solutions are found
-    } 
     
     public static void main(String[] args)
     {
