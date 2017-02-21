@@ -1,8 +1,8 @@
 import java.util.*;
 
-public class NQueenIterative
+public class IterativeNQueen
 {
-    static int N = 9;
+    static int N = 8;
 
     static boolean iterativeSolution(int board[][]) 
     {
@@ -48,8 +48,8 @@ public class NQueenIterative
                                         if(row < N-1) 
                                             row = temp1+1;
                                         else if(row == N-1)
-                                            {
-                                                temp1 = (Integer) lastRow.pop();
+                                            { //SuperLoop
+						temp1 = (Integer) lastRow.pop();
                                                 temp2 = (Integer) lastCol.pop();
                                                 // System.out.println(temp1+" "+temp2);
                                                 board[temp1][temp2] = 0;
@@ -80,7 +80,7 @@ public class NQueenIterative
                     if (board[i][j] == 1)
                         System.out.print("Q   ");
                     else
-                        System.out.print("_   ");
+                        System.out.print("*   ");
                 System.out.println("\n");
             }
     }
@@ -106,16 +106,24 @@ public class NQueenIterative
     
     public static void main(String[] args)
     {
-        N=9;
-        System.out.println("N-queen solution calculated for N="+N + " using iteration");
+        System.out.println("N-queen solution calculated for N="+N + " using ITERATION");
         System.out.println("");
-        int[][] board = new int[N][N];
+	//time at start of the program
+	long startTime = System.currentTimeMillis();
 
+        int[][] board = new int[N][N];
         if (iterativeSolution(board)) { 
             System.out.println("Solution not found.");
         }
         else
-            drawLayout(board);
+	    {
+		drawLayout(board);
+		//time at end of program and total time for program to run 
+		long endTime   = System.currentTimeMillis();
+		long totalTime = endTime - startTime;
+		System.out.println("Solutions calculated and printed in " + totalTime + " milliseconds");
+
+	    }
 
     } // End of main method
 }

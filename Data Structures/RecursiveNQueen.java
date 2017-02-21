@@ -2,9 +2,9 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class queen {
+public class RecursiveNQueen {
     static Scanner scan;
-    static int N = 4;
+    static int N = 8;
 	
     static void drawLayout(int board[][])
     {
@@ -14,7 +14,7 @@ public class queen {
                     if (board[i][j] == 1)
                         System.out.print("Q   ");
                     else
-                        System.out.print("_   ");
+                        System.out.print("*   ");
                 System.out.println("\n");
             }
     }
@@ -30,6 +30,7 @@ public class queen {
                         if (recursiveSolution(board, coloumn + 1))
                             return true;
                         board[i][coloumn] = 0; // We are backtracking here
+			// The placed queen is removed
                     }
             }
         return false; // This statement is returned, when no solutions are found
@@ -50,22 +51,30 @@ public class queen {
             if (board[i][j] == 1)
                 return false;
         }
-        return true; //No conflicts are occuring, queen can be placed
+        return true; //No conflicts are occuring, Queen can be placed
     }
 
     public static void main(String[] args)
     {
-        scan = new Scanner(System.in);
-        System.out.println("State the value of N in this program!");
-        N = scan.nextInt();
+        System.out.println("N-queen solution calculated for N="+N + " using RECURSION");
+	System.out.println("");
         System.out.println("");
-        System.out.println("");
+	//time at start of the program
+	long startTime = System.currentTimeMillis();
         int[][] board = new int[N][N];
 
-        if (!recursiveSolution(board, 0)) { 
-            System.out.println("Solution not found.");
-        }
-        drawLayout(board);
+        if (!recursiveSolution(board, 0))
+	    { 
+		System.out.println("Solution not found.");
+	    }
+	else
+	    {
+		drawLayout(board);
+		//time at end of program and total time for program to run 
+		long endTime   = System.currentTimeMillis();
+		long totalTime = endTime - startTime;
+		System.out.println("Solutions calculated and printed in " + totalTime + " milliseconds");
+	    }
 
     } // End of main method
 }
