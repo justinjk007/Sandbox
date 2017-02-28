@@ -49,7 +49,7 @@ public class IterativeNQueen
                                             row = temp1+1;
                                         else if(row == N-1)
                                             { //SuperLoop
-						temp1 = (Integer) lastRow.pop();
+                                                temp1 = (Integer) lastRow.pop();
                                                 temp2 = (Integer) lastCol.pop();
                                                 // System.out.println(temp1+" "+temp2);
                                                 board[temp1][temp2] = 0;
@@ -108,22 +108,22 @@ public class IterativeNQueen
     {
         System.out.println("N-queen solution calculated for N="+N + " using ITERATION");
         System.out.println("");
-	//time at start of the program
-	long startTime = System.currentTimeMillis();
+        //time at start of the program
+        long startTime = System.currentTimeMillis();
 
         int[][] board = new int[N][N];
         if (iterativeSolution(board)) { 
             System.out.println("Solution not found.");
         }
         else
-	    {
-		drawLayout(board);
-		//time at end of program and total time for program to run 
-		long endTime   = System.currentTimeMillis();
-		long totalTime = endTime - startTime;
-		System.out.println("Solutions calculated and printed in " + totalTime + " milliseconds");
+            {
+                drawLayout(board);
+                //time at end of program and total time for program to run 
+                long endTime   = System.currentTimeMillis();
+                long totalTime = endTime - startTime;
+                System.out.println("Solutions calculated and printed in " + totalTime + " milliseconds");
 
-	    }
+            }
 
     } // End of main method
 }
