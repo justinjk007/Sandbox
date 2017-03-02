@@ -107,4 +107,4 @@ public class IterativeNQueenAll
         //     }
 
     } // End of main method
-} 
+}
