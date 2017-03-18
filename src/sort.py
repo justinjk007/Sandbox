@@ -1,7 +1,8 @@
 #!/usr/bin/env python2.7
 import collections
 import math
-compare = lambda x,y: collections.Counter(x) == collections.Counter(y)
+compare = lambda x, y: collections.Counter(x) == collections.Counter(y)
+
 
 def insertionSort(data):
     "Implements Insertion sort"
@@ -19,12 +20,30 @@ def insertionSort(data):
 
 def heapSort(heap):
     "Implements Heapsort for min heap"
-    def minHeapify(heap, i):
-        "This method maintains the Heap property of A from root i"
+
+    def minHeapify(heap, i):  # O(log n)
+        "This method maintains the Heap property of the heap from root i"
         l = left(i)
         r = right(i)
-        smallestChild = min(heap[l], heap[r]) # Big O(n)
+        if heap[l] > heap[i]:
+            if heap[r] > heap[i]:
+                pass
+            else:
+                swap(heap, r, i)
+                minHeapify(heap, r)
+                return heap
+        else:
+            swap(heap, l, i)
+            minHeapify(heap, l)
+            return heap
 
+    def buildHeap(Array):  # O(n)
+        firstElement = Array[0]
+        Array.append(firstElement)
+        ArraySize = len(Array)
+        for i in range(ArraySize/2, 1, -1):
+            minHeapify(Array, i)
+        return Array
 
     def parent(i):
         "Returns the index of the parent element of the child node at i"
@@ -43,6 +62,13 @@ def heapSort(heap):
         data[i], data[j] = data[j], data[i]  # do THE swap
         return data
 
+    heap = buildHeap(heap)
+    heapSize = len(heap)
+    for i in range (heapSize, 2, -1):
+        swap(heap, 1, i)
+    heap = minHeapify(heap, 1)
+    return heap
+
 
 def main():
     "This is the main method and the beginning of the program"
@@ -51,7 +77,7 @@ def main():
     print("Unsorted array: "),
     for val in unsorted:
         print(str(val) + ","),
-    sortedData = insertionSort(unsorted)
+    sortedData = heapSort(unsorted)
     print "\n ======> Lenth of the array is: "+str(len(sortedData))
     print("Sorted array: "),
     for val in sortedData:
