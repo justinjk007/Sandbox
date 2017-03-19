@@ -21,6 +21,9 @@ def insertionSort(data):
 def heapSort(heap):
     "Implements Heapsort for min heap"
 
+    firstElement = heap[0]
+    heap.append(firstElement)
+
     def minHeapify(heap, i):  # O(log n)
         "This method maintains the Heap property of the heap from root i"
         l = left(i)
@@ -38,8 +41,6 @@ def heapSort(heap):
             return heap
 
     def buildHeap(Array):  # O(n)
-        firstElement = Array[0]
-        Array.append(firstElement)
         ArraySize = len(Array)
         for i in range(ArraySize/2, 1, -1):
             minHeapify(Array, i)
