@@ -1,6 +1,5 @@
 #!/usr/bin/env python2.7
 import math
-# Remember to shift the array by one coloumn so we can do the tree operations
 # Instead of making many methods to convert back and forth
 # from everything make a method to covert to pre-order first, this way
 # you only have to write four methods, post to pre, in to pre, pre to
@@ -9,15 +8,29 @@ import math
 
 def preOrder(data, order):
     "This method returns the pre-order traversal of the binary tree"
-    #TODO
+
+    def postToPre(data):
+        pass
+
+    def inToPre(data):
+        pass
+
+    if order == 'post-order':
+        postToPre(data)
+    elif order == 'in-order':
+        inToPre(data)
+    else:
+        print "Unexpected inputs"
 
 
-def postOrder(data, order):
+def postOrder(data, root=1):
     "This method returns the post-order traversal of the binary tree"
-    #TODO
+    size = len(data)
+    if(root > size):
+        return
 
 
-def inOrder(data, order):
+def inOrder(data):
     "This method returns the in-order traversal of the binary tree"
     #TODO
 
@@ -45,6 +58,8 @@ def swap(data, i, j):
 
 def main(data, order):
     "This is the main method and the beginning of the program"
+    null = None
+    data = [null] + data  # Make the given array into a workable tree
     if order == "pre-order":
         inOrder(data, order)
         postOrder(data, order)
