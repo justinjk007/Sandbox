@@ -1,6 +1,10 @@
 #!/usr/bin/env python2.7
 import math
 # Remember to shift the array by one coloumn so we can do the tree operations
+# Instead of making many methods to convert back and forth
+# from everything make a method to covert to pre-order first, this way
+# you only have to write four methods, post to pre, in to pre, pre to
+# post, pre to in
 
 
 def preOrder(data, order):
