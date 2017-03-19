@@ -5,6 +5,8 @@ import math
 # you only have to write four methods, post to pre, in to pre, pre to
 # post, pre to in
 
+# Unless we assume we have a complete binary tree we have no way of approaching this
+
 
 def preOrder(data, order):
     "This method returns the pre-order traversal of the binary tree"
