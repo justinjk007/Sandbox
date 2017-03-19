@@ -1,5 +1,6 @@
 #!/usr/bin/env python2.7
 import math
+# Remember to shift the array by one coloumn so we can do the tree operations
 
 
 def preOrder(data, order):
