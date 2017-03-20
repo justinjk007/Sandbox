@@ -7,6 +7,7 @@ import math
 
 # Assuming we have a complete binary tree
 
+result = []
 
 # def detect(data, order):
 #     def postToPre(data):
@@ -45,6 +46,13 @@ def inOrder(data, node):
         inOrder(data, left(node))
         print data[node],
         inOrder(data, right(node))
+
+
+def preOrderToArray(data, node):
+    if node <= len(data) - 1:
+        preOrderToArray(data, left(node))
+        preOrderToArray(data, right(node))
+        result.append(data[node])
 
 
 def parent(i):
@@ -93,11 +101,14 @@ def main():
     testList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     testList2 = [1, 2, 9, 3, 6, 10, 12, 4, 5, 7, 8, 11]
     testList3 = [1, 2, 3, 4, 5]
+    testList4 = [1, 2, 4, 5, 3]
     null = None
     testList = [null] + testList
     testList2 = [null] + testList2
     testList3 = [null] + testList3
-    inOrder(testList3, 1)
+    testList4 = [null] + testList4
+    preOrderToArray(testList4, 1)
+    print result
 
 
 if __name__ == "__main__":
