@@ -8,9 +8,7 @@ import math
 # Unless we assume we have a complete binary tree we have no way of approaching this
 
 
-def preOrder(data, order):
-    "This method returns the pre-order traversal of the binary tree"
-
+def detect(data):
     def postToPre(data):
         pass
 
@@ -24,12 +22,13 @@ def preOrder(data, order):
     else:
         print "Unexpected inputs"
 
+def preOrder(data):
+    "This method returns the pre-order traversal of the binary tree"
+    pass
 
-def postOrder(data, root=1):
+
+def postOrder(data):
     "This method returns the post-order traversal of the binary tree"
-    size = len(data)
-    if(root > size):
-        return
 
 
 def inOrder(data):
@@ -63,14 +62,14 @@ def main(data, order):
     null = None
     data = [null] + data  # Make the given array into a workable tree
     if order == "pre-order":
-        inOrder(data, order)
-        postOrder(data, order)
+        inOrder(data)
+        postOrder(data)
     elif order == "post-order":
-        inOrder(data, order)
-        preOrder(data, order)
+        inOrder(data)
+        preOrder(data)
     elif order == "in-order":
-        postOrder(data, order)
-        preOrder(data, order)
+        postOrder(data)
+        preOrder(data)
     else:
         print "Incorrect inputs.."
 
