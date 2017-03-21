@@ -1,5 +1,9 @@
 #!/usr/bin/env python2.7
 
+# Author : Justin Kaipada
+# Data   : 21-03-2017
+# Purpose: Traversal reversal and constructing all other traversal
+
 result = []
 tempData = []
 
