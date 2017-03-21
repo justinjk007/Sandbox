@@ -4,6 +4,7 @@ import math
 # Assuming we have a complete binary tree
 
 result = []
+tempData = []
 
 # def detect(data, order):
 #     def postToPre(data):
@@ -44,13 +45,30 @@ def inOrder(data, node):
         inOrder(data, right(node))
 
 
-def preOrderToArray(data):
+def preOrderToArray(data, node):
+    global tempData
     global result
-    size = len(result)-1
-    leftNum = int(math.ceil(size/2))
-    rightNum = size-leftNum-1
-    result[1] = data[1]
+    if node <= len(data) - 1:
+        result[node] = tempData.pop(0)
+        preOrderToArray(data, left(node))
+        preOrderToArray(data, right(node))
 
+def postOrderToArray(data, node):
+    global tempData
+    global result
+    if node <= len(data) - 1:
+        postOrderToArray(data, left(node))
+        postOrderToArray(data, right(node))
+        result[node] = tempData.pop(0)
+
+def inOrderToArray(data, node):
+    global tempData
+    global result
+    if node <= len(data) - 1:
+        inOrderToArray(data, left(node))
+        result[node] = tempData.pop(0)
+        inOrderToArray(data, right(node))
+        
 def parent(i):
     "Returns the index of the parent element of the child node at i"
     return int(math.floor(i/2))
@@ -94,20 +112,24 @@ def swap(data, i, j):
 
 def main():
     global result
+    global tempData
     print ""
     testList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     testList2 = [1, 2, 9, 3, 6, 10, 12, 4, 5, 7, 8, 11]
     testList3 = [1, 2, 3, 4, 5, 6, 7]
-    testList4 = [1, 2, 4, 5, 3]
+    testList4 = [4, 5, 2, 3, 1]
+    tempData = [4, 5, 2, 3, 1]
     null = None
     testList = [null] + testList
     testList2 = [null] + testList2
     testList3 = [null] + testList3
     testList4 = [null] + testList4
-    # result = [null] * len(testList4)
-    # preOrderToArray(testList4)
-    preOrder(testList3, 1)
-    # print result
+    result = [null] * len(testList4)
+    # preOrderToArray(testList4, 1)
+    postOrderToArray(testList4, 1)
+    result.pop(0)
+    # preOrder(testList3, 1)
+    print result
 
 
 if __name__ == "__main__":
