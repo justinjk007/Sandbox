@@ -1,71 +1,62 @@
 #!/usr/bin/env python2.7
-import math
 
 result = []
 tempData = []
 
-# def detect(data, order):
-#     def postToPre(data):
-#         pass
-
-#     def inToPre(data):
-#         pass
-
-#     if order == 'post-order':
-#         postToPre(data)
-#     elif order == 'in-order':
-#         inToPre(data)
-#     else:
-#         print "Unexpected inputs"
-
 
 def preOrder(data, node):
-    "This method returns the pre-order traversal of the binary tree"
+    "This method prints the pre-order traversal of the binary tree"
     if node <= len(data) - 1:
-        print data[node],
-        preOrder(data, left(node))
-        preOrder(data, right(node))
+        print data[node],            # Print the element at the node
+        preOrder(data, left(node))   # Traverse the left subtree
+        preOrder(data, right(node))  # Traverse the right subtree
 
 
 def postOrder(data, node):
-    "This method returns the post-order traversal of the binary tree"
+    "This method prints the post-order traversal of the binary tree"
     if node <= len(data) - 1:
-        postOrder(data, left(node))
-        postOrder(data, right(node))
-        print data[node],
+        postOrder(data, left(node))   # Traverse the left subtree
+        postOrder(data, right(node))  # Traverse the right subtree
+        print data[node],             # Print the element at the node
 
 
 def inOrder(data, node):
-    "This method returns the in-order traversal of the binary tree"
+    "This method prints the in-order traversal of the binary tree"
     if node <= len(data) - 1:
-        inOrder(data, left(node))
-        print data[node],
-        inOrder(data, right(node))
+        inOrder(data, left(node))    # Traverse the left subtree
+        print data[node],            # Print the element at the node
+        inOrder(data, right(node))   # Traverse the right subtree
 
 
 def preOrderToArray(data, node):
-    global tempData
-    global result
+    "This method returns original array of the passed preorder traversal"
+    global tempData  # Stores the same array as a copy
+    global result    # Stores the result of the reversal of given traversal
     if node <= len(data)-1:
+        # Pop the 1st element of the array and add it to visited node in result
         result[node] = tempData.pop(0)
         preOrderToArray(data, left(node))
         preOrderToArray(data, right(node))
 
 
 def postOrderToArray(data, node):
-    global tempData
-    global result
+    "This method returns original array of the passed post-order traversal"
+    global tempData  # Stores the same array as a copy
+    global result    # Stores the result of the reversal of given traversal
     if node <= len(data) - 1:
         postOrderToArray(data, left(node))
         postOrderToArray(data, right(node))
+        # Pop the 1st element of the array and add it to visited node in result
         result[node] = tempData.pop(0)
 
 
 def inOrderToArray(data, node):
-    global tempData
-    global result
+    "This method returns original array of the passed in-order traversal"
+    global tempData  # Stores the same array as a copy
+    global result    # Stores the result of the reversal of given traversal
     if node <= len(data) - 1:
         inOrderToArray(data, left(node))
+        # Pop the 1st element of the array and add it to visited node in result
         result[node] = tempData.pop(0)
         inOrderToArray(data, right(node))
 
@@ -83,8 +74,8 @@ def right(i):
 def main():
     "This is the main method and the beginning of the program"
     print ""
-    global result
-    global tempData
+    global result    # Stores the result of reversed array
+    global tempData  # Stores the main array temporarily for reconstructing
     data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     tempData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     # tempData = list(data)
@@ -120,6 +111,7 @@ def main():
         postOrder(result, 1)
     else:
         print "Incorrect inputs.."
+
 
 if __name__ == "__main__":
     main()
