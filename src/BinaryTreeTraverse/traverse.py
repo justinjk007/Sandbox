@@ -1,9 +1,5 @@
 #!/usr/bin/env python2.7
 import math
-# Instead of making many methods to convert back and forth
-# from everything make a method to covert to pre-order first, this way
-# you only have to write four methods, post to pre, in to pre, pre to
-# post, pre to in
 
 # Assuming we have a complete binary tree
 
@@ -48,16 +44,16 @@ def inOrder(data, node):
         inOrder(data, right(node))
 
 
-def preOrderToArray(data, node):
-    if node <= len(data) - 1:
-        preOrderToArray(data, left(node))
-        preOrderToArray(data, right(node))
-        result.append(data[node])
-
+def preOrderToArray(data):
+    global result
+    size = len(result)-1
+    leftNum = int(math.ceil(size/2))
+    rightNum = size-leftNum-1
+    result[1] = data[1]
 
 def parent(i):
     "Returns the index of the parent element of the child node at i"
-    return math.floor(i/2)
+    return int(math.floor(i/2))
 
 
 def left(i):
@@ -97,18 +93,21 @@ def swap(data, i, j):
 #     main(testList, "pre-order")
 
 def main():
+    global result
     print ""
     testList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     testList2 = [1, 2, 9, 3, 6, 10, 12, 4, 5, 7, 8, 11]
-    testList3 = [1, 2, 3, 4, 5]
+    testList3 = [1, 2, 3, 4, 5, 6, 7]
     testList4 = [1, 2, 4, 5, 3]
     null = None
     testList = [null] + testList
     testList2 = [null] + testList2
     testList3 = [null] + testList3
     testList4 = [null] + testList4
-    preOrderToArray(testList4, 1)
-    print result
+    # result = [null] * len(testList4)
+    # preOrderToArray(testList4)
+    preOrder(testList3, 1)
+    # print result
 
 
 if __name__ == "__main__":
