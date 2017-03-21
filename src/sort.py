@@ -18,27 +18,24 @@ def insertionSort(data):
         return data  # Method ends here
 
 
-def heapSort(heap):
+def heapSort(heap):  # O(n log n)
     "Implements Heapsort for min heap"
 
-    firstElement = heap[0]
-    heap.append(firstElement)
+    heap.append(0)
 
     def minHeapify(heap, i):  # O(log n)
         "This method maintains the Heap property of the heap from root i"
         l = left(i)
         r = right(i)
-        if heap[l] > heap[i]:
-            if heap[r] > heap[i]:
-                pass
-            else:
-                swap(heap, r, i)
-                minHeapify(heap, r)
-                return heap
+        if l < len(heap) and heap[l] > heap[i]:
+            large = l
         else:
-            swap(heap, l, i)
-            minHeapify(heap, l)
-            return heap
+            large = i
+        if r < len(heap) and heap[i] > heap[large]:
+            large = r
+        if large != i:
+            swap(heap, i, large)
+            minHeapify(heap, large)
 
     def buildHeap(Array):  # O(n)
         ArraySize = len(Array)
@@ -47,19 +44,20 @@ def heapSort(heap):
         return Array
 
     def parent(i):
-        "Returns the index of the parent element of the child node at i"
+        "Returns the index of the parent element of the child node i"
         return math.floor(i/2)
 
     def left(i):
-        "Returns the index of the left element of the parent node at i"
+        "Returns the index of the left element of the parent node i"
         return 2*i
 
     def right(i):
-        "Returns the index of the right element of the parent node at i"
+        "Returns the index of the right element of the parent node i"
         return (2*i)+1
 
     def swap(data, i, j):
         "This method swaps the two points i and j in the list data"
+        print i, j
         data[i], data[j] = data[j], data[i]  # do THE swap
         return data
 
@@ -71,24 +69,22 @@ def heapSort(heap):
     return heap
 
 
-def main():
+def main():  # Tester
     "This is the main method and the beginning of the program"
     print ""
+    print "Unsorted array: ",
     unsorted = [54, 587, 5, -545, 545, 47, 2, -54, 0, 0, 1, 2]
-    print("Unsorted array: "),
-    for val in unsorted:
-        print(str(val) + ","),
-    sortedData = heapSort(unsorted)
-    print "\n ======> Lenth of the array is: "+str(len(sortedData))
-    print("Sorted array: "),
-    for val in sortedData:
-        print(str(val) + ","),
-        # The comma on the end of the line makes the printing at the same line
+    print unsorted
 
+    sortedData = heapSort(unsorted)
+
+    print "======> Lenth of the array is: "+str(len(sortedData))
+    print("Sorted array: "),
+    print sortedData
     if compare(sortedData, [54, 587, 5, -545, 545, 47, 2, -54, 0, 0, 1, 2]):
-        print "\n ======> Sorting was successful"
+        print "======> Sorting was successful"
     else:
-        print "\n ======> SORTING FAILED!!"
+        print "======> SORTING FAILED!!"
 
 
 if __name__ == "__main__":
