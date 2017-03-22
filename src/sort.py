@@ -1,7 +1,6 @@
 #!/usr/bin/env python2.7
 import collections
 import math
-compare = lambda x, y: collections.Counter(x) == collections.Counter(y)
 
 
 def insertionSort(data):
@@ -15,33 +14,32 @@ def insertionSort(data):
             data[j+1] = data[j]  # Swap happens here.
             j = j-1  # incrementing the divider because we swapped values
             data[j+1] = CurrentItem
-        return data  # Method ends here
+    return data  # Method ends here
 
 
 def heapSort(heap):  # O(n log n)
     "Implements Heapsort for min heap"
 
-    heap.append(0)
 
-    def minHeapify(heap, i):  # O(log n)
+    def minHeapify(i):  # O(log n)
         "This method maintains the Heap property of the heap from root i"
         l = left(i)
         r = right(i)
-        if l < len(heap) and heap[l] > heap[i]:
-            large = l
+        if l < len(heap) and heap[l] < heap[i]:
+            small = l
         else:
-            large = i
-        if r < len(heap) and heap[i] > heap[large]:
-            large = r
-        if large != i:
-            swap(heap, i, large)
-            minHeapify(heap, large)
+            small = i
+        if r < len(heap) and heap[i] < heap[small]:
+            small = r
+        if small != i:
+            swap(heap, i, small)
+            minHeapify(small)   # minheapify from node = small
 
-    def buildHeap(Array):  # O(n)
-        ArraySize = len(Array)
-        for i in range(ArraySize/2, 1, -1):
-            minHeapify(Array, i)
-        return Array
+    def buildHeap():  # O(n)
+        ArraySize = len(heap)
+        start = int(math.floor(ArraySize/2))
+        for i in range(start, 1, -1):
+            minHeapify(i)
 
     def parent(i):
         "Returns the index of the parent element of the child node i"
@@ -57,34 +55,50 @@ def heapSort(heap):  # O(n log n)
 
     def swap(data, i, j):
         "This method swaps the two points i and j in the list data"
-        print i, j
+        # print i, j
         data[i], data[j] = data[j], data[i]  # do THE swap
         return data
 
-    heap = buildHeap(heap)
-    heapSize = len(heap)
+    heap = [None] + heap
+    buildHeap()
+    heapSize = len(heap) - 1
     for i in range (heapSize, 2, -1):
         swap(heap, 1, i)
-    heap = minHeapify(heap, 1)
+    minHeapify(1)
+    heap.pop(0)
     return heap
+
+
+def compare(list1, list2):
+    if(len(list1) == len(list2)):
+        pass
+    else:
+        return False
+    for i in range(0, len(list1)):
+        if(list1[i] == list2[i]):
+            pass
+        else:
+            return False
+    return True
 
 
 def main():  # Tester
     "This is the main method and the beginning of the program"
     print ""
-    print "Unsorted array: ",
     unsorted = [54, 587, 5, -545, 545, 47, 2, -54, 0, 0, 1, 2]
+    print "======> Lenth of the array is: "+str(len(unsorted))
+    print "Unsorted array:",
     print unsorted
 
-    sortedData = heapSort(unsorted)
+    sortedData = heapSort(unsorted)    # Change the sorting here
 
-    print "======> Lenth of the array is: "+str(len(sortedData))
-    print("Sorted array: "),
+    print "Expected output:[-545, -54, 0, 0, 1, 2, 2, 5, 47, 54, 545, 587]"
+    print ("Sorted array:  "),
     print sortedData
-    if compare(sortedData, [54, 587, 5, -545, 545, 47, 2, -54, 0, 0, 1, 2]):
-        print "======> Sorting was successful"
+    if compare(sortedData, [-545, -54, 0, 0, 1, 2, 2, 5, 47, 54, 545, 587]):
+        print "======> Sorting was SUCCESSFUL"
     else:
-        print "======> SORTING FAILED!!"
+        print "======> Sorting FAILED!!"
 
 
 if __name__ == "__main__":
