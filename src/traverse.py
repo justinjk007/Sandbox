@@ -82,6 +82,8 @@ def main():
     global tempData  # Stores the main array temporarily for reconstructing
     data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     tempData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    # data = ['E', 'A', 'C', 'K', 'F', 'H', 'D', 'B', 'G']
+    # tempData = ['E', 'A', 'C', 'K', 'F', 'H', 'D', 'B', 'G']
     # tempData = list(data)
     print "We have this array as our input"
     print data
