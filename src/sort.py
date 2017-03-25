@@ -21,29 +21,26 @@ def heapSort(heap):  # O(n log n)
     "Implements Heapsort for min heap"
 
 
-    def minHeapify(i):  # O(log n)
+    def minHeapify(heap, i):  # O(log n)
         "This method maintains the Heap property of the heap from root i"
         l = left(i)
         r = right(i)
-        if l < len(heap) and heap[l] < heap[i]:
+        if l <= len(heap)-1 and heap[l] < heap[i]:
             small = l
         else:
             small = i
-        if r < len(heap) and heap[i] < heap[small]:
+        if r <= len(heap)-1 and heap[i] < heap[small]:
             small = r
         if small != i:
             swap(heap, i, small)
-            minHeapify(small)   # minheapify from node = small
+            minHeapify(heap, small)   # minheapify from node = small
 
-    def buildHeap():  # O(n)
-        ArraySize = len(heap)
+    def buildHeap(heap):  # O(n)
+        "This method builds a min heap, with smallest element at index 1/root"
+        ArraySize = len(heap)-1
         start = int(math.floor(ArraySize/2))
-        for i in range(start, 1, -1):
-            minHeapify(i)
-
-    def parent(i):
-        "Returns the index of the parent element of the child node i"
-        return math.floor(i/2)
+        for i in range(start, 0, -1):
+            minHeapify(heap, i)
 
     def left(i):
         "Returns the index of the left element of the parent node i"
@@ -55,22 +52,20 @@ def heapSort(heap):  # O(n log n)
 
     def swap(data, i, j):
         "This method swaps the two points i and j in the list data"
-        # print i, j
         data[i], data[j] = data[j], data[i]  # do THE swap
         return data
 
     heap = [None] + heap
-    buildHeap()
-    heapSize = len(heap) - 1
-    for i in range (heapSize, 2, -1):
+    buildHeap(heap)
+    for i in range(len(heap)-1, 1, -1):
         swap(heap, 1, i)
-    minHeapify(1)
-    heap.pop(0)
+    minHeapify(heap, 1)  # Do the miheapify one more time from the root.
+    heap.pop(0)          # Remove the None value that was added for ordering
     return heap
 
 
 def compare(list1, list2):
-    if(len(list1) == len(list2)):
+    if len(list1) == len(list2):
         pass
     else:
         return False
