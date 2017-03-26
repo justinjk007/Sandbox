@@ -35,13 +35,13 @@ def heapSort(heap, base):  # O(n log n)
         if r <= size and base[r] > base[large]:
             large = r
         if large != i:
-            swap(heap, i, large)
             swap(base, i, large)
-            maxHeapify(heap, base, large, size)   # minheapify from node = large
+            swap(heap, i, large)
+            maxHeapify(heap, base, large, size)   # maxheapify from node = large
 
     def buildHeap(heap, base):  # O(n)
         "This method builds a min heap, with largest element at index 1/root"
-        ArraySize = len(heap)-1
+        ArraySize = len(base)-1
         start = int(math.floor(ArraySize/2))
         for i in range(start, 0, -1):
             maxHeapify(heap, base, i, ArraySize)
@@ -58,12 +58,12 @@ def heapSort(heap, base):  # O(n log n)
     heap = [None] + heap
     base = [None] + base
     buildHeap(heap, base)
-    heapSize = len(heap)-1
+    heapSize = len(base)-1
     # Here we are reducing the heapsize until to zero, removing the
     # sorted value from the heap each time
     for i in range(heapSize, 1, -1):
-        swap(heap, 1, i)
         swap(base, 1, i)
+        swap(heap, 1, i)
         heapSize -= 1
         maxHeapify(heap, base, 1, heapSize)
     heap.pop(0)          # Remove the None value that was added for ordering
