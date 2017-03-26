@@ -18,8 +18,7 @@ def insertionSort(data):
 
 
 def heapSort(heap):  # O(n log n)
-    "Implements Heapsort for min heap"
-
+    "Implements Heapsort for max heap, sorting in ascending order"
 
     def maxHeapify(heap, i, size):  # O(log n)
         "This method maintains the Heap property of the heap from root i"
@@ -57,14 +56,13 @@ def heapSort(heap):  # O(n log n)
 
     heap = [None] + heap
     buildHeap(heap)
-    print "After Buildheap ",
-    print heap
     heapSize = len(heap)-1
+    # Here we are reducing the heapsize until to zero, removing the
+    # sorted value from the heap each time
     for i in range(heapSize, 1, -1):
         swap(heap, 1, i)
         heapSize -= 1
         maxHeapify(heap, 1, heapSize)
-
     heap.pop(0)          # Remove the None value that was added for ordering
     return heap
 
