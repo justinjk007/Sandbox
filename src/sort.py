@@ -21,26 +21,26 @@ def heapSort(heap):  # O(n log n)
     "Implements Heapsort for min heap"
 
 
-    def minHeapify(heap, i):  # O(log n)
+    def maxHeapify(heap, i, size):  # O(log n)
         "This method maintains the Heap property of the heap from root i"
         l = left(i)
         r = right(i)
-        if l <= len(heap)-1 and heap[l] < heap[i]:
-            small = l
+        if l <= size and heap[l] > heap[i]:
+            large = l
         else:
-            small = i
-        if r <= len(heap)-1 and heap[i] < heap[small]:
-            small = r
-        if small != i:
-            swap(heap, i, small)
-            minHeapify(heap, small)   # minheapify from node = small
+            large = i
+        if r <= size and heap[r] > heap[large]:
+            large = r
+        if large != i:
+            swap(heap, i, large)
+            maxHeapify(heap, large, size)   # minheapify from node = large
 
     def buildHeap(heap):  # O(n)
-        "This method builds a min heap, with smallest element at index 1/root"
+        "This method builds a min heap, with largest element at index 1/root"
         ArraySize = len(heap)-1
         start = int(math.floor(ArraySize/2))
         for i in range(start, 0, -1):
-            minHeapify(heap, i)
+            maxHeapify(heap, i, ArraySize)
 
     def left(i):
         "Returns the index of the left element of the parent node i"
@@ -57,9 +57,14 @@ def heapSort(heap):  # O(n log n)
 
     heap = [None] + heap
     buildHeap(heap)
-    for i in range(len(heap)-1, 1, -1):
+    print "After Buildheap ",
+    print heap
+    heapSize = len(heap)-1
+    for i in range(heapSize, 1, -1):
         swap(heap, 1, i)
-    minHeapify(heap, 1)  # Do the miheapify one more time from the root.
+        heapSize -= 1
+        maxHeapify(heap, 1, heapSize)
+
     heap.pop(0)          # Remove the None value that was added for ordering
     return heap
 
