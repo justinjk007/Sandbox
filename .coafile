@@ -1,6 +1,6 @@
 [Default]
 bears = SpaceConsistencyBear, PEP8Bear
-files = src/*.py
+files = python/*.py
 use_spaces = True
 
 # http://docs.coala.io/en/latest/Users/coafile.html
