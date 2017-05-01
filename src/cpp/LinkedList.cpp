@@ -22,5 +22,5 @@ double Rectangle::getArea(){
 int main(){
   Rectangle object1;
   object1.setSides(2,10);
-  cout<<"The area of the rectangle is "<<object1.getArea();
+  cout<<"The area of the rectangle is "<<object1.getArea()<<"\n";
 }
