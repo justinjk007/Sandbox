@@ -14,8 +14,7 @@ void LinkedList::insertAtHead(int element){ // O(1)
 void LinkedList::insertAfterTail(int element){ // O(n)
   Node* newNode = new Node;
   current = head;  
-  cout<<"Current . head "<<current->data<<endl;
-  for (int i = 0; i < size; ++i) {
+  for (int i = 1; i < size; ++i) {
     current = current->next;
   }
   current->next=newNode;
@@ -25,10 +24,10 @@ void LinkedList::insertAfterTail(int element){ // O(n)
 }
 
 void LinkedList::display(){     // O(n)
-  cout << "The contents of the list is\n";
+  cout << "The contents of the list is -> ";
   current = head;
   for (int i = 0; i < size; ++i) {
-    cout << current->data<<"\n";
+    cout << current->data<<" ";
     current = current->next;
   }
 }
