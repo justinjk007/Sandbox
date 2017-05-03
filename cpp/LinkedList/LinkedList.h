@@ -19,6 +19,7 @@ class LinkedList{
     size = 0;
   }
   void insertAtHead(int data);
+  void insertAfterTail(int data);
   void display();
   int getSize();
 };

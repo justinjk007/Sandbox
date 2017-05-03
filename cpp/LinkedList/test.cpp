@@ -14,9 +14,9 @@ int main(){
   cout << "The size of the list is "<<myList.getSize()<<endl;
   myList.display();
   cout << "The size of the list is "<<myList.getSize()<<endl;
-  myList.insertAtHead(77);
-  myList.insertAtHead(977);
-  myList.insertAtHead(877);
+  myList.insertAfterTail(77);
+  myList.insertAfterTail(977);
+  myList.insertAfterTail(877);
   cout << "After adding 3 more elements\n";
   myList.display();
   cout << "The size of the list is "<<myList.getSize()<<endl;
