@@ -1,4 +1,7 @@
-class LinkedList{		// This is the constructor, very important.
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
+class LinkedList{
  private:
   struct Node{
     int data;
@@ -9,7 +12,7 @@ class LinkedList{		// This is the constructor, very important.
   Node* temp;
   Node* current;
  public:
-  LinkedList(){        
+  LinkedList(){                   // This is the constructor, very important.
     this->head = NULL;
     this->current = NULL;
     this->temp = NULL;
@@ -19,3 +22,4 @@ class LinkedList{		// This is the constructor, very important.
   void display();
   int getSize();
 };
+#endif /* LINKEDLIST_H */
