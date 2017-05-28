@@ -10,3 +10,6 @@
 *.lss
 *.map
 *.sym
+
+# Ignore cmake build files
+/cpp/CMakeTutorial/build
