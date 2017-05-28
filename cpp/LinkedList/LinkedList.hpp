@@ -1,5 +1,5 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
+#ifndef LINKEDLIST_HPP
+#define LINKEDLIST_HPP
 
 class LinkedList{
  private:
@@ -23,4 +23,4 @@ class LinkedList{
   void display();
   int getSize();
 };
-#endif /* LINKEDLIST_H */
+#endif /* LINKEDLIST_HPP */
