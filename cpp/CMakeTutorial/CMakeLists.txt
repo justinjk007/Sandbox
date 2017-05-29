@@ -16,4 +16,8 @@ configure_file (
 # so that we will find TutorialConfig.h
 include_directories("${PROJECT_BINARY_DIR}")
 
+include_directories ("${PROJECT_SOURCE_DIR}/MathFunctions")
+add_subdirectory (MathFunctions)
+
 ADD_EXECUTABLE(Tutorial tutorial.cpp)
+target_link_libraries (Tutorial MathFunctions)
