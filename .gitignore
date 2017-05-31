@@ -13,3 +13,4 @@
 
 # Ignore cmake build files
 /cpp/CMakeTutorial/build
+/cpp/2Dgraphics/build
