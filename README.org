@@ -2,3 +2,5 @@
 
 *Rand* -om Coding samples to study and for practice major algorithms and data
 Structures, that might help me in the future.
+
+[[file:test.org][This is a test! lol]]
