@@ -4,3 +4,4 @@
 Structures, that might help me in the future.
 
 [[file:test.org][This is a test! lol]]
+[[file:.\cpp\test.org][This is a test! lol]]
