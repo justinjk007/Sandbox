@@ -1,7 +1,13 @@
-* Rand
+* Sandman
 
-*Rand* -om Coding samples to study and for practice major algorithms and data
-Structures, that might help me in the future.
+Sadman consists of random coding samples and sandboxed stuff which help me to study & practice major algorithms and data
+Structures.
+
+Everything in here is me testing stuff out(even this readme), isolated from the main project I am working on. So why have a repo for that you ask ?
+Its just so that I can copy and paste it in the future .. /elohhel/
+
+This is a sandbox I am *SANDMAN*
 
 [[file:test.org][This is a test! lol]]
+
 [[file:.\cpp\test.org][This is a test! lol]]
