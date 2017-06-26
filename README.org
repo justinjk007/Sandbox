@@ -1,6 +1,7 @@
 * Sandman
 
 #+CAPTION: This is the cover image, a picture of sandman from Spiderman
+#+ATTR_HTML: :style margin-left: auto; margin-right: auto;
 [[./cover.png]]
 
 Sadman consists of random coding samples and sandboxed stuff which help me to study & practice major algorithms and data
