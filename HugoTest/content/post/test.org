@@ -5,3 +5,14 @@ title = "test"
 
 +++
 
+This is *just* a test to see if /markdown/ is working when using native org mode
+
+
+
+#+BEGIN_SRC c++
+class test {
+    this->test.thing = 12;
+    return NULL;
+}
+
+#+END_SRC
