@@ -1,5 +1,6 @@
 #include <iostream>
-#include <fstream>
+#include <chrono>
+#include <thread>
 
 using namespace std;
 
@@ -11,6 +12,12 @@ int main(int argc, char *argv[])
     printf("This program was made available under the unlicense\n");
     printf("See LICENSE file included with the distribution for details and disclaimer.\n");
     printf("Error : No arguments specified (use -help or -h for help)\n");
+    for (int i = 0; i < 10; ++i)
+      {
+	cout << "[ "<<i+1<<" ]"<<"\r";
+	cout.flush();
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));
+      }
   }
   else {
     std::cout << "Have " << argc << " arguments:" << std::endl;
