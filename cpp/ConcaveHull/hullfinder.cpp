@@ -72,14 +72,15 @@ double Point::Distance(const Point &segmentStart,
 double Point::DecisionDistance(const list<Point> &points) const {
   Point result = points.front();
   double dst = Distance(points.front());
-  for (int i = 1; i < points.size(); i++) {
-    Point cur = points[i];
+  std::list<Point>::iterator it = points.begin();
+  for (; it != points.end(); it++) {
+    Point cur = *it;
     double curDistance = Distance(cur);
-    if (curDistance < dst) {
-      result = cur;
-      dst = curDistance;
+      if (curDistance < dst) {
+	result = cur;
+	dst = curDistance;
+      }
     }
-  }
   return dst;
 }
 
