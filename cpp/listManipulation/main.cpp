@@ -9,14 +9,7 @@ bool compareint(int line1, int line2);
 
 int main() {
   list<int> testable = {45, 453, 46, 46, 47, 4, 1, 2};
-  // testable.pop_front();         // Remove the same line from the list
-  // list<int> new_testable = removeCommonints(testable);
-  list<int> new_testable;
-  while (!testable.empty()) {
-      int line1 = testable.front(); // Get the 1st line from the list
-      testable.pop_front();         // Remove the same line from the list
-      new_testable.push_front(line1);
-  }
+  list<int> new_testable = removeCommonints(testable);
   print_list(testable);
   print_list(new_testable);
   return 0;
