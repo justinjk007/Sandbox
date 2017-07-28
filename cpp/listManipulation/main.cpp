@@ -8,9 +8,8 @@ void print_list(list<int>);
 bool compareint(int line1, int line2);
 
 int main() {
-  cout << "Working\n";
   list<int> testable = {45, 453, 46, 46, 47, 4, 1, 2};
-  testable = removeCommonints(testable);
+  // testable = removeCommonints(testable);
   return 0;
 }
 
