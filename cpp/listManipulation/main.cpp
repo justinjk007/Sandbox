@@ -8,7 +8,7 @@ void print_list(list<int>);
 bool compareint(int line1, int line2);
 
 int main() {
-  list<int> lines = {45, 453, 46, 46, 47, 4, 1, 2};
+  list<int> lines = {45, 453, 46, 47, 46, 4, 1, 2, 45};
   list<int> new_lines = removeCommonints(lines);
   print_list(lines);
   print_list(new_lines);
@@ -23,25 +23,14 @@ std::list<int> removeCommonints(std::list<int> lines) {
    * list. This is done to eliminate inner line-segments of the
    * translated structure.
    */
-  std::list<int> new_lines;
-  bool flag = false;
+  std::list<int> new_lines = lines;
 
   while (!lines.empty()) {
     int line1 = lines.front(); // Get the 1st line from the list
     lines.pop_front();         // Remove the same line from the list
-    for (list<int>::iterator it = lines.begin(); it != lines.end(); ++it) {
-      if (compareint(line1, *it)) { // Compare to see if same lines exists
-        if (!lines.empty()){
-          // lines.erase(it); // Erase the duplicate if it exists
-	  flag = true;       // Flag that duplicate exits
-	}
-      }
-      else
-	;
-    }
-    // if (!flag) // If duplicate doesn't exist. push this to the list.
-    //   new_lines.push_front(line1);
-    // flag = false; // Reset flag
+    for (list<int>::iterator it = lines.begin(); it != lines.end(); ++it)
+      if (compareint(line1, *it)) // Compare to see if same lines exists
+        new_lines.remove(line1);
   }
 
   return new_lines;
