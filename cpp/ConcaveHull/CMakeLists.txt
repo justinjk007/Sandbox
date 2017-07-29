@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.2)
-project (clitest)
+project (Concave Hull)
 
 # The version number.
 set (Tutorial_VERSION_MAJOR 1)

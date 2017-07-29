@@ -6,6 +6,7 @@ using namespace std;
 list<int> removeCommonints(list<int>);
 void print_list(list<int>);
 bool compareint(int line1, int line2);
+std::list<int> removeint(std::list<int> lines, int val);
 
 int main() {
   list<int> lines = {45, 453, 46, 47, 46, 4, 1, 2, 45};
@@ -30,7 +31,8 @@ std::list<int> removeCommonints(std::list<int> lines) {
     lines.pop_front();         // Remove the same line from the list
     for (list<int>::iterator it = lines.begin(); it != lines.end(); ++it)
       if (compareint(line1, *it)) // Compare to see if same lines exists
-        new_lines.remove(line1);
+                                  // new_lines.remove(line1);
+        new_lines = removeint(new_lines, line1);
   }
 
   return new_lines;
@@ -52,4 +54,17 @@ bool compareint(int line1, int line2) {
     return true;
   else
     return false;
+}
+
+std::list<int> removeint(std::list<int> lines, int val) {
+  /**
+   * Override function for list::remove rewritten for list<Line>
+   */
+  for (list<int>::iterator it = lines.begin(); it != lines.end();) {
+    if (compareint(val, *it)) // If same lines exists
+      it = lines.erase(it);
+    else
+      ++it;
+  }
+  return lines;
 }
