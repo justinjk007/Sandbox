@@ -31,8 +31,7 @@ std::list<int> removeCommonints(std::list<int> lines) {
     lines.pop_front();         // Remove the same line from the list
     for (list<int>::iterator it = lines.begin(); it != lines.end(); ++it)
       if (compareint(line1, *it)) // Compare to see if same lines exists
-                                  // new_lines.remove(line1);
-        new_lines = removeint(new_lines, line1);
+        new_lines = removeint(new_lines, line1); // new_lines.remove(line1);
   }
 
   return new_lines;
