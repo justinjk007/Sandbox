@@ -49,7 +49,11 @@ void print_list(list<int> print_me) {
 }
 
 bool compareint(int line1, int line2) {
-  if (line1 == line2)
+  /**
+   * Just to clarify we obviously don't need this in real life. This
+   * actually compares lines strcuts, this is just a test repo.
+   */
+    if (line1 == line2)
     return true;
   else
     return false;
