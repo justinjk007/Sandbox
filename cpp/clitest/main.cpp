@@ -1,29 +1,32 @@
-#include <iostream>
+#include "rang.hpp"
 #include <chrono>
+#include <iostream>
 #include <thread>
 
 using namespace std;
+using namespace rang;
 
-int main(int argc, char *argv[])
-{
-  if(argc < 2) {
-    printf("Test 1.0, the mini applet for Blah Blah\n");
-    printf("Copyright (c) 2017, JustinJK007.  All rights reserved.\n");
-    printf("This program was made available under the unlicense\n");
-    printf("See LICENSE file included with the distribution for details and disclaimer.\n");
-    printf("Error : No arguments specified (use -help or -h for help)\n");
-    for (int i = 0; i < 10; ++i)
-      {
-	cout << "[ "<<i+1<<" ]"<<"\r";
-	cout.flush();
-	std::this_thread::sleep_for(std::chrono::milliseconds(500));
-      }
-  }
-  else {
-    std::cout << "Have " << argc << " arguments:" << std::endl;
-    for (int i = 0; i < argc; ++i) {
-      std::cout << argv[i] << std::endl;
-    }
-  }
+int main(int argc, char *argv[]) {
+  cout << fg::green << "Hello\n" << style::reset;
+  cout << fg::red << "Hello\n" << style::reset;
+  cout << fg::cyan << "Hello\n" << style::reset;
+  cout << fg::gray << "Hello\n" << style::reset;
+  cout << fg::magenta << "Hello\n" << style::reset;
+  cout << fg::blue << "Hello\n" << style::reset;
+  cout << fg::yellow << "Hello\n" << style::reset;
+  cout << fg::black <<bg::red<< "Hello\n" << style::reset;
   return 0;
+}
+
+void timeout(int time_in_seconds) {
+  /**
+   * Dumb method for timeout with timer on screen. This methods
+   * accepts time in seconds and wait for it.
+   */
+  for (int i = 0; i < time_in_seconds; ++i) {
+    cout << "[ " << i + 1 << " ]"
+         << "\r";
+    cout.flush();
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+  }
 }
