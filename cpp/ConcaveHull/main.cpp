@@ -1,7 +1,5 @@
 #include <iostream>
-#include <chrono>
-#include <thread>
-#include "hullfinder.hpp"
+#include "hull.h"
 
 using namespace std;
 
