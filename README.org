@@ -1,6 +1,6 @@
 #+html: <img src="https://alphapapa.github.io/dont-tread-on-emacs/dont-tread-on-emacs-150.png" align="right"/>
 
-* Sandman 
+* Sandman
 
 #+CAPTION: This is the cover image, a picture of sandman from Spiderman
 #+html: <p align="center"><img src="/cover.png" /></p>
@@ -14,5 +14,3 @@ Its just so that I can copy and paste it in the future .. /elohhel/
 This is a sandbox I am *SANDMAN*
 
 [[file:test.org][This is a test! lol]]
-
-[[file:.\cpp\test.org][This is a test! lol]]
