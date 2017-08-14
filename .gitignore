@@ -12,11 +12,5 @@
 *.sym
 
 # Ignore cmake build files
-/cpp/CMakeTutorial/build
-/cpp/2Dgraphics/build
-/cpp/fileIO/build
-/cpp/clitest/build
-/cpp/ConcaveHull/build
-/cpp/listManipulation/build
-/cpp/DE/build
-/cpp/Sorting/build
+build/
+bin/
