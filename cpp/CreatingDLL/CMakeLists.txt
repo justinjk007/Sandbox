@@ -1,18 +1,23 @@
-cmake_minimum_required (VERSION 3.2)
-project (CreatingDLL)
+cmake_minimum_required(VERSION 2.8.6)
+project (animallib)
+set (CMAKE_BUILD_TYPE Debug)
 
-# The version number.
-set (Tutorial_VERSION_MAJOR 1)
-set (Tutorial_VERSION_MINOR 0)
+#include *.h files under include folder and
+#the project's output folder e.g. Debug
+include_directories (include ${PROJECT_BINARY_DIR})
 
+#compile all *.cpp source files under src folder
+file (GLOB SOURCES "src/*.cpp")
+
+#output library as animallib.*
+
+#output library export file *.lib and
+#output macro definitions include file
 include (GenerateExportHeader)
-
-add_library(MyLibrary ${LIB_TYPE} ${srcs})
-GENERATE_EXPORT_HEADER( MyLibrary
-  BASE_NAME MyLibrary
-  EXPORT_MACRO_NAME MyLibrary_EXPORT
-  EXPORT_FILE_NAME MyLibrary_Export.h
-  STATIC_DEFINE MyLibrary_BUILT_AS_STATIC
+add_library(animallib SHARED ${SOURCES})
+GENERATE_EXPORT_HEADER (animallib
+  BASE_NAME animallib
+  EXPORT_MACRO_NAME animallib_EXPORT
+  EXPORT_FILE_NAME animallib_Export.h
+  STATIC_DEFINE animallib_BUILT_AS_STATIC
   )
-
-ADD_EXECUTABLE(main main.cpp)
