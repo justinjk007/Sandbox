@@ -2,7 +2,7 @@
 * This is me learning to build and use DLLs
 
 All of the code and resources was taken from link below , thanks for
-code ❤
+the code ❤
 
 http://dominoc925.blogspot.ca/2016/08/use-cmake-to-help-build-and-use-windows.html
 
