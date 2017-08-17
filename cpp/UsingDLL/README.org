@@ -1,0 +1,13 @@
+
+* This is me learning to build and use DLLs
+
+All of the code and resources was taken from link below , thanks for
+code ❤
+
+http://dominoc925.blogspot.ca/2016/08/use-cmake-to-help-build-and-use-windows.html
+
+*Remember to add the directory with dlls that is* =./libs= *folder into*
+ *your system path*
+
+These files where tested into windows 10 obviously because on Linux we
+use .so files and life is much easier there.
