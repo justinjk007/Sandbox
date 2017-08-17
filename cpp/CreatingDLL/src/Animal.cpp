@@ -8,5 +8,5 @@ using namespace std;
 animallib_EXPORT Animal::Animal(string name):name (name){}
 
 animallib_EXPORT void Animal::print_name(){
-    cout << "Name is " << this->name << endl;
+  cout << "Name is " << this->name <<"\n";
 }
