@@ -1,2 +1,1 @@
-loadlibrary('pentagonlib','CalculateGap.hpp','addheader','pentagonlib_Export.h');
-libfunctions pentagonlib
+loadlibrary('animallib','include/Animal.h','addheader','include/animallib_Export.h')
