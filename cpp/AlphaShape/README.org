@@ -1,5 +1,5 @@
 
 * Before running !!
 
-*Before compiling the program on windows OS make sure* =fin.dat= *file in*
-*the folder with the* =.sln= *file*.
+Before compiling the program on windows OS make sure =fin.dat= file in
+the folder with the =.sln= file.
