@@ -6,7 +6,6 @@
 #include <fstream>
 #include <iostream>
 #include <list>
-#include <vector>
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
 
@@ -60,7 +59,7 @@ int main()
 
     Alpha_shape_2 A(points.begin(), points.end(), FT(10000), Alpha_shape_2::GENERAL);
 
-    std::vector<Segment> segments;
+    std::list<Segment> segments;
     alpha_edges(A, std::back_inserter(segments));
 
     std::cout << "Alpha Shape computed" << std::endl;
