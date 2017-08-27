@@ -48,6 +48,24 @@ bool file_input(OutputIterator out)
     return true;
 }
 
+void writeToFile(std::list<Segment> lines)
+{
+    /**
+     * Write the points to file , for plotting and stuff
+     */
+    std::ofstream myfile;
+    std::string file_name = "rawData.csv";
+    myfile.open(file_name);
+    myfile << "x,y\n";
+    std::list<Segment>::iterator it = lines.begin();
+    while (it != lines.end()) {
+      myfile << it->source().x() << "," << it->source().y() << "\n";
+      myfile << it->target().x() << "," << it->target().y() << "\n";
+        ++it;
+    }
+    myfile.close();
+}
+
 // Reads a list of points and returns a list of segments
 // corresponding to the Alpha shape.
 int main()
@@ -61,7 +79,7 @@ int main()
 
     std::list<Segment> segments;
     alpha_edges(A, std::back_inserter(segments));
-
+    writeToFile(segments);
     std::cout << "Alpha Shape computed" << std::endl;
     std::cout << segments.size() << " alpha shape edges" << std::endl;
     std::cout << "Optimal alpha: " << *A.find_optimal_alpha(1) << std::endl;
