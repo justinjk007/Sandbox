@@ -33,7 +33,7 @@ void alpha_edges(const Alpha_shape_2& A, OutputIterator out)
 template <class OutputIterator>
 bool file_input(OutputIterator out)
 {
-    std::ifstream is("fin.dat", std::ios::in);
+    std::ifstream is("fin2.dat", std::ios::in);
 
     if (is.fail()) {
         std::cerr << "unable to open file for input" << std::endl;
@@ -75,8 +75,7 @@ int main()
         return -1;
     }
 
-    Alpha_shape_2 A(points.begin(), points.end(), FT(10000), Alpha_shape_2::GENERAL);
-
+    Alpha_shape_2 A(points.begin(), points.end(), FT(20), Alpha_shape_2::GENERAL);
     std::list<Segment> segments;
     alpha_edges(A, std::back_inserter(segments));
     writeToFile(segments);
