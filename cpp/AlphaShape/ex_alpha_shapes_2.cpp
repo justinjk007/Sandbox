@@ -83,5 +83,11 @@ int main()
     std::cout << segments.size() << " alpha shape edges" << std::endl;
     std::cout << "Optimal alpha: " << *A.find_optimal_alpha(1) << std::endl;
 
+    /**
+     // Point_2 point(2.0, 1.0);
+     * Points can be defined like the declaration above, include
+     * respected headers and typedefs from * this file thou
+     */
+
     return 0;
 }
