@@ -1,5 +1,4 @@
 #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
-#include <CGAL/Bbox_2.h>
 #include <CGAL/Polygon_2.h>
 #include <list>
 
