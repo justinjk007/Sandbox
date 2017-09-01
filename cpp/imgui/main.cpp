@@ -3,9 +3,11 @@
 #include <iostream>
 #include "imgui/imgui.h"
 #include "imgui/imgui_internal.h"
+#undef main
 
 using namespace std;
 
+#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 int main()
 {
     SDL_Init(SDL_INIT_VIDEO);
@@ -18,7 +20,7 @@ int main()
     SDL_RenderClear(renderer);
     SDL_RenderPresent(renderer);
 
-    SDL_Delay(3000);
+    SDL_Delay(30000);
 
     SDL_DestroyWindow(window);
     SDL_Quit();
