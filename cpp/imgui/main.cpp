@@ -1,21 +1,27 @@
+#include <GL/glew.h>
+#include <SDL.h>
 #include <iostream>
 #include "imgui/imgui.h"
 #include "imgui/imgui_internal.h"
 
 using namespace std;
-using namespace ImGui;
 
 int main()
 {
+    SDL_Init(SDL_INIT_VIDEO);
 
-  cout << "Hello World";
-  // Text("Hello, world %d", 123);
+    SDL_Window* window =
+        SDL_CreateWindow("SDL2Test", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, 0);
 
-  // if (Button("OK?")) {
-  //   // do stuff
-  // }
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+    SDL_RenderClear(renderer);
+    SDL_RenderPresent(renderer);
 
-  // InputText("string", buf, 256);
-  // SliderFloat("float", &f, 0.0f, 1.0f);
-  return 0;
+    SDL_Delay(3000);
+
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+
+    return 0;
 }

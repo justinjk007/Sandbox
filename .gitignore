@@ -14,6 +14,7 @@
 # Ignore cmake build files
 build/
 bin/
+external/
 
 # Ignore windows files for the system
 *.ini
