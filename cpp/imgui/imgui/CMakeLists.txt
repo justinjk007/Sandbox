@@ -1,18 +1,18 @@
-set(SOURCE
-  ${SOURCE}
-  ${CMAKE_CURRENT_SOURCE_DIR}/imgui.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/imgui_draw.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/imgui_demo.cpp
-  PARENT_SCOPE
+TARGET_SOURCES(imgui
+  PRIVATE
+  "${CMAKE_CURRENT_LIST_DIR}/imgui.cpp"
+  "${CMAKE_CURRENT_LIST_DIR}/imgui_draw.cpp"
+  "${CMAKE_CURRENT_LIST_DIR}/imgui_demo.cpp"
+  PUBLIC
+  "${CMAKE_CURRENT_LIST_DIR}/imgui.h"
+  "${CMAKE_CURRENT_LIST_DIR}/imconfig.h"
+  "${CMAKE_CURRENT_LIST_DIR}/imgui_internal.h"
+  "${CMAKE_CURRENT_LIST_DIR}/stb_rect_pack.h"
+  "${CMAKE_CURRENT_LIST_DIR}/stb_textedit.h"
+  "${CMAKE_CURRENT_LIST_DIR}/stb_truetype.h"
   )
-set(HEADERS
-  ${HEADERS}
-  ${CMAKE_CURRENT_SOURCE_DIR}/imgui.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/imconfig.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/imgui_internal.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/stb_rect_pack.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/stb_textedit.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/stb_truetype.h
-  PARENT_SCOPE
-  )
-message("-- All files successfully linked")
+
+
+TARGET_INCLUDE_DIRECTORIES(imgui PUBLIC "${CMAKE_CURRENT_LIST_DIR}")
+
+MESSAGE("-- All files successfully linked")
