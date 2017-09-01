@@ -5,6 +5,7 @@
 #include <math.h>
 #include "TutorialConfig.h"
 #include "MathFunctions.h"
+#include "subdir/subdirtest.hpp"
 
 using namespace std;
 
@@ -13,6 +14,9 @@ int main(int argc, char *argv[]) {
     fprintf(stdout, "%s Version %d.%d\n", argv[0], Tutorial_VERSION_MAJOR,
             Tutorial_VERSION_MINOR);
     fprintf(stdout, "Usage: %s number\n", argv[0]);
+
+    // Calling subdir test function
+    testFunction(2) ;
     return 1;
   }
   double inputValue = atof(argv[1]);
