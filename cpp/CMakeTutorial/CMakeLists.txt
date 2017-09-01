@@ -1,13 +1,13 @@
-cmake_minimum_required (VERSION 3.5)
-project (CMakeTutorial)
+CMAKE_MINIMUM_REQUIRED (VERSION 3.5)
+PROJECT (CMakeTutorial)
 
 # The version number.
-set (Tutorial_VERSION_MAJOR 0)
-set (Tutorial_VERSION_MINOR 5)
+SET (Tutorial_VERSION_MAJOR 0)
+SET (Tutorial_VERSION_MINOR 5)
 
 # configure a header file to pass some of the CMake settings
 # to the source code
-configure_file (
+CONFIGURE_FILE (
   "${PROJECT_SOURCE_DIR}/TutorialConfig.h.in"
   "${PROJECT_BINARY_DIR}/TutorialConfig.h"
   )
@@ -19,9 +19,10 @@ INCLUDE_DIRECTORIES("${PROJECT_BINARY_DIR}")
 # include_directories ("${PROJECT_SOURCE_DIR}/MathFunctions")
 # add_subdirectory (MathFunctions)
 
-ADD_SUBDIRECTORY("${PROJECT_SOURCE_DIR}/subdir")
-
 ADD_LIBRARY(MathFunctions MathFunctions.cpp)
+ADD_LIBRARY(subdirtest "") # Include libs from subdir
 
-ADD_EXECUTABLE(Tutorial tutorial.cpp)
-TARGET_LINK_LIBRARIES (Tutorial MathFunctions ${HEADERS} ${SOURCE})
+INCLUDE(subdir/CMakeLists.txt) # Include libs from subdir
+
+ADD_EXECUTABLE(main tutorial.cpp)
+TARGET_LINK_LIBRARIES (main MathFunctions subdirtest)

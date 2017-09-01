@@ -8,8 +8,8 @@ void testFunction(int testing)
  * This is just a test function that is void
  */
 {
-    cout << "The parameter passed is" << testing;
-    cout << "The test value is" << returnTest(2.0);
+    cout << "The parameter passed is " << testing << endl;
+    cout << "The test value is " << returnTest(2.0) << endl;
 }
 double returnTest(double testVal)
 /**
