@@ -18,3 +18,8 @@ external/
 
 # Ignore windows files for the system
 *.ini
+
+# Ignore Gnu tag files
+GPATH
+GRTAGS
+GTAGS
