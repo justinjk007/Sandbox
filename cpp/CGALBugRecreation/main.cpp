@@ -15,11 +15,11 @@ typedef CGAL::Polygon_2<K> Polygon_2;
 
 int main()
 {
-    Point a1(9.3, 5.5);
-    Point b1(9.3, 5.5);
+    Point a1(2.49462, 7.6909);
+    Point b1(6.54268, 4.75606);
 
-    Point a2(9.3, 5.5);
-    Point b2(9.3, 5.5);
+    Point a2(4.51865, 6.22348);
+    Point b2(21.1579, 6.22348);
 
     Segment one(a1, b1);
     Segment two(a2, b2);
