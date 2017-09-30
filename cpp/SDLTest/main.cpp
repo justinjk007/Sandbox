@@ -19,7 +19,7 @@ int main()
         SDL_Quit();
         return 1;
     }
-    this_thread::sleep_for(std::chrono::seconds(50));
+    this_thread::sleep_for(std::chrono::seconds(5));
     SDL_Quit();
     return 0;
 }
