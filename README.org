@@ -17,4 +17,4 @@ This is a sandbox I am *SANDMAN*
 
 [[file:test.org][This is a test!]]
 
-* Writing ~Readme~s
+* Writing ~Readme~ s
