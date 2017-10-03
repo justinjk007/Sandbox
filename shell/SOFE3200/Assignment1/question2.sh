@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# This script infinitely appends current time into the file below
+# until it is interrupted by the user.
+
 file="sampling.txt" # File to be written into
 
 while : # Infinite loop

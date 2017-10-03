@@ -1,7 +1,7 @@
 #!/bin/bash
 
-RED='\033[0;31m'
-GREEN='\033[0;32m'
+# This script takes in some sample text and a substring and the
+# outputs the number of times the substring exists in the main string.
 
 # Get the input from the user
 echo "Enter a sample input:"
