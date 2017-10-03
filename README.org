@@ -7,14 +7,28 @@
 
 [[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPL%20v3-blue.svg]]
 
-Sadman consists of random coding samples and sandboxed stuff which help me to study & practice major algorithms and data
-Structures.
+Sadman consists of random coding samples and sandboxed stuff which
+help me to study & practice major algorithms and data Structures.
 
-Everything in here is me testing stuff out(even this readme), isolated from the main project I am working on. So why have a repo for that you ask ?
-Its just so that I can copy and paste it in the future .. /elohhel/
+Everything in here is me testing stuff out(even this =README=), isolated
+from the main project I am working on. So why have a repo for that you
+ask ?  Its just so that I can copy and paste it in the future
+.. /elohhel/
+
+You won't find any readme's in any of the projects because I don't get
+time to maintain them too. But you can open an issue and I will reply
+to you on the same day guaranteed. 👍 👍 .
 
 This is a sandbox I am *SANDMAN*
 
 [[file:test.org][This is a test!]]
 
 * Writing ~Readme~ s
+
+Write =README= files as if you are explaining a younger yourself what is
+going on in your repository, as if the person looking at your code is
+a 6th grade student starting to learn code.
+
+As mentioned above, although no readme's(mostly) are written in this
+repository, I will help you out if your stuck on something, don't just
+copy and paste create a sandcastle for yourself.
