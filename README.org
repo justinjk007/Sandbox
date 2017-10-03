@@ -15,4 +15,6 @@ Its just so that I can copy and paste it in the future .. /elohhel/
 
 This is a sandbox I am *SANDMAN*
 
-[[file:test.org][This is a test! lol]]
+[[file:test.org][This is a test!]]
+
+* Writing ~Readme~s
