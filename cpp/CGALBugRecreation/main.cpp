@@ -5,6 +5,8 @@
 #include <CGAL/bounding_box.h>
 #include <iostream>
 
+using namespace std;
+
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
 
 typedef K::FT FT;
@@ -13,21 +15,23 @@ typedef K::Segment_2 Segment;
 typedef K::Iso_rectangle_2 Rect;
 typedef CGAL::Polygon_2<K> Polygon_2;
 
+bool doIntersect(Segment, list<Segment>);
+
 int main()
 {
-    Point a1(2.49462, 7.6909);
-    Point b1(6.54268, 4.75606);
+    // Define points
+}
 
-    Point a2(4.51865, 6.22348);
-    Point b2(21.1579, 6.22348);
-
-    Segment one(a1, b1);
-    Segment two(a2, b2);
-
-    if (CGAL::do_intersect(one, two))
-        std::cout << "These lines intersect" << std::endl;  // This is correct
-    else
-        std::cout << "These lines doesn't intersect" << std::endl;
-
-    return 0;
+bool doIntersect(Segment line, list<Segment> lines)
+{
+    /**
+     * Check if the passed line segments intersects with any of the
+     * lines inside the given list of lines without checking for the
+     * line that is an exception.
+     */
+    for (auto& current : lines) {
+        cout << "Segments just tested :" << current << " " << line << endl;
+        if (CGAL::do_intersect(line, current)) return true;
+    }
+    return false;
 }
