@@ -471,8 +471,7 @@ void doIntersect(Segment line, list<Segment> lines)
 {
     /**
      * Check if the passed line segments intersects with any of the
-     * lines inside the given list of lines without checking for the
-     * line that is an exception.
+     * lines inside the given list of lines.
      */
     for (auto& current : lines) {
         cout << "Segments just tested :" << current << " " << line << endl;
