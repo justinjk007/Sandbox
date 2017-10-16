@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script takes in some sample text and a substring and the
+# This script takes in some sample text and a substring and then
 # outputs the number of times the substring exists in the main string.
 
 # Get the input from the user

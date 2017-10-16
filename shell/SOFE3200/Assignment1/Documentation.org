@@ -1,0 +1,58 @@
+#+CREATOR: Emacs 25.2, Org-mode
+#+OPTIONS: whn:nil toc:nil num:nil
+#+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \usepackage{uarial}
+#+LATEX_HEADER:\renewcommand\familydefault{\sfdefault}
+#+LATEX_HEADER:\renewcommand{\baselinestretch}{2.0}
+#+LATEX_HEADER:\documentclass[12pt,a4paper]{journal}
+
+Author: *Justin Kaipada*
+
+Date: 13/10/2017
+
+Submission number: =517602b1-c3c1-406d-9d86-5e784e45af50=
+
+* General Readme
+This is *Assignment 1* for *SOFE3200* and the all the scripts provided are
+written in Bourne shell.  Run the scripts using =sh script.sh= or by
+using =./script.sh=
+
+* Question 1
+
+This script takes in some sample text and a substring and then outputs
+the number of times the substring exists in the main string.
+
+The script uses =grep= to search for the substring in the main string
+inputted while making use of the =-c= flag which make sure that only
+parts containing the substring are returned. This output is then piped
+into =wc= tool while using the =-l= flag which returns the number of lines
+in the input it was given, which is the answer we want and the exact
+count of the occurrence of the substring.
+
+* Question 2
+
+This script infinitely appends current time into the file below
+until it is interrupted by the user.
+
+The script uses the =date= tool along with the =%T= option to get the
+current time in the system. This is stored into a variable. This info
+is then appended to a file using the =echo= command. This is executed in
+an infinite =while= loop until the user interrupts the operation by
+using the =CTRL + C= shortcut. In between each execution the process is
+delayed using the =sleep= command which accepts time in seconds.
+
+* Question 3
+
+This script implements a mini multiple choice game
+
+The script starts of by retrieving the user-name from the system and
+storing it in a variable. Then the questions and answers are
+defined. Now each question is displayed out to the user using the =echo=
+command while making use of the =-e= flag which allows character
+escaping. Colors are used to highlight certain parts of the questions
+providing good contrast. =if= statements are used make sure the answers
+inputted is right. The input from the user accepted using =read=
+command. Each time the answer entered is correct the variable keeping
+the score is incremented by one. Finally the answer is mailed to the
+root using the =wall= tool.
