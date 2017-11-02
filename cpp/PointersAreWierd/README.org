@@ -1,0 +1,19 @@
+* Take away
+
+So in *C++* a pointer of type =double= can point a double variable, an
+array and a vector. This can become confusing at times.
+
+You can write methods where it takes in a double pointer as an
+argument and you effectively pass the pointer to a vector or an
+array. While doing this make sure you also pass the size of the vector
+or array as well because these information cannot be obtained from the
+pointers we have.
+
+Also note that:
+#+BEGIN_SRC cpp-mode
+// if foo is of type double*
+//then
+double x = foo[index];
+//is the same as
+double x =*(foo+index);
+#+END_SRC
