@@ -17,3 +17,14 @@ double x = foo[index];
 //is the same as
 double x =*(foo+index);
 #+END_SRC
+
+* Importantly
+
+If you don't know the size of the array you are pointing to then this
+is a huge problem.
+
+if we go out of bound when dereferencing an array pointer then unlike
+getting an exception when we are using the array straight forward we
+will still get some gibberish value using the pointer method because
+we are just referencing to the next pointer which can be *anything* or
+*NULL* , which is useless and buggy. So don't forget to pass the size.
