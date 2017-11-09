@@ -23,3 +23,6 @@ external/
 GPATH
 GRTAGS
 GTAGS
+
+# Ignore java class files
+*.Class
