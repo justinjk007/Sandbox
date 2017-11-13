@@ -24,5 +24,8 @@ GPATH
 GRTAGS
 GTAGS
 
+# Ignored Qt files
+*.pro.user
+
 # Ignore java class files
 *.Class
