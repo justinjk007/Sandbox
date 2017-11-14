@@ -1,10 +1,13 @@
 project(FoundationTimer)
 cmake_minimum_required(VERSION 2.8.12)
 
-add_definitions("-std=c++11")
+# Conan Setup
+if (EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+  include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+  conan_basic_setup()
+else()
+  # other way to get dependencies info
+endif()
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
-
-add_executable(timer timer.cpp)
-target_link_libraries(timer ${CONAN_LIBS})
+ADD_EXECUTABLE(timer timer.cpp)
+TARGET_LINK_LIBRARIES(timer ${CONAN_LIBS})
