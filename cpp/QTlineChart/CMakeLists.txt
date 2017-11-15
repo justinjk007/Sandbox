@@ -3,4 +3,13 @@ project(QTlineChart)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(main main.cpp)
+# Conan Setup
+if (EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+  include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+  conan_basic_setup()
+else()
+  # other way to get dependencies info
+endif()
+
+ADD_EXECUTABLE(main main.cpp)
+TARGET_LINK_LIBRARIES(main ${CONAN_LIBS})

@@ -1,5 +1,6 @@
 [requires]
 Qt/5.8.0@osechet/testing
+QtCharts/5.7@rdeterre/stable
 
 [generators]
 cmake
