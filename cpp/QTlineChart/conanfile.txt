@@ -1,0 +1,5 @@
+[requires]
+Qt/5.8.0@osechet/testing
+
+[generators]
+cmake
