@@ -29,3 +29,6 @@ GTAGS
 
 # Ignore java class files
 *.Class
+
+# Ignore Qt build dirs
+build-QtVisualize-Desktop_Qt_5_9_1_MSVC2015_64bit-Debug
