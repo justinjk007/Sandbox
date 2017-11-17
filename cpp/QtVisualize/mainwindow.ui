@@ -31,7 +31,7 @@
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
-       <widget class="QTextBrowser" name="textBrowser_3"/>
+       <widget class="QTextBrowser" name="pentagon_info"/>
       </item>
       <item>
        <layout class="QGridLayout" name="gridLayout">

@@ -15,9 +15,10 @@ class MainWindow : public QMainWindow
    public:
     explicit MainWindow(QWidget* parent = 0);
     ~MainWindow();
+    void updatePentagonInfo(const QString&);
 
-   private:
-    Ui::MainWindow* ui;
+ private:
+	Ui::MainWindow* ui;
 };
 
 #endif  // MAINWINDOW_H
