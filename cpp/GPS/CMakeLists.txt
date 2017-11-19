@@ -1,0 +1,11 @@
+CMAKE_MINIMUM_REQUIRED (VERSION 2.8)
+PROJECT (GPS)
+SET (CMAKE_CXX_STANDARD 11)
+
+ADD_LIBRARY(solution solution.cpp)
+
+ADD_EXECUTABLE(main main.cpp)
+ADD_EXECUTABLE(run_tests tests.cpp)
+
+TARGET_LINK_LIBRARIES(main solution)
+TARGET_LINK_LIBRARIES(run_tests solution)
