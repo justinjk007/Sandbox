@@ -14,34 +14,13 @@
    <string/>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>9</x>
-      <y>9</y>
-      <width>311</width>
-      <height>261</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <property name="sizeConstraint">
-      <enum>QLayout::SetNoConstraint</enum>
-     </property>
-     <item>
-      <widget class="QWidget" name="fitness_graph" native="true"/>
-     </item>
-     <item>
-      <widget class="QWidget" name="tile_gen" native="true"/>
-     </item>
-    </layout>
-   </widget>
    <widget class="QWidget" name="pentagon_gen" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>280</y>
-      <width>281</width>
-      <height>191</height>
+      <x>380</x>
+      <y>270</y>
+      <width>256</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -54,19 +33,19 @@
    <widget class="QTextBrowser" name="pentagon_info">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>50</y>
-      <width>256</width>
+      <x>380</x>
+      <y>10</y>
+      <width>261</width>
       <height>192</height>
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>310</y>
-      <width>165</width>
+      <x>381</x>
+      <y>209</y>
+      <width>261</width>
       <height>54</height>
      </rect>
     </property>
@@ -115,6 +94,26 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>321</width>
+      <height>211</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>230</y>
+      <width>321</width>
+      <height>151</height>
+     </rect>
+    </property>
    </widget>
   </widget>
  </widget>

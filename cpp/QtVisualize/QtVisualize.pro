@@ -25,10 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        FitnessGraph.cpp
 
-HEADERS += \
-        mainwindow.h
+        HEADERS += \
+        mainwindow.h \
+        FitnessGraph.h
 
-FORMS += \
+        FORMS += \
         mainwindow.ui

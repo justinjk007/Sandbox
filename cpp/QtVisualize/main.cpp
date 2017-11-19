@@ -1,5 +1,7 @@
 #include <QApplication>
 #include <QString>
+#include <QtCharts/QChartView>
+#include <QtCharts/QLineSeries>
 #include "mainwindow.h"
 
 using namespace std;
