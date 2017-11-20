@@ -1,82 +1,83 @@
+ #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
-/*
- * Checks ----
- * Check for number of arguments
- * Check for read file not existing
- * Check for write file not existing
- * Check for not enough memory for writing
- */
+#include <time.h>
 
 int main(int argc, char *argv[]) {
-  /* Check for correctly formated input */
-  if (argc < 3) {
-    printf("dupilcate: Too few arguments!!\n");
-    printf("    usage: duplicate <sourcefile> <targetfile>\n");
-    return 1;
-  } else if (argc > 3) {
-    printf("dupilcate: Too many arguments!!\n");
-    printf("    usage: duplicate <sourcefile> <targetfile>\n");
-    return 1;
+  // Check for argument count, first argument is the name of the executable
+  if (argc != 3) {
+    printf("duplicate: incorrect number of arguments!\n");
+    printf("Usage: duplicate <sourcefile> <sourcefile>\n");
+    exit(EXIT_FAILURE);
   }
 
-  FILE *from_file, *to_file;
-  long length, copy_size_in_bytes;
-  char *file_array = 0;
-  int array_len; /* Length of file array */
+  // Declare and initialize variables
+  char ch, from_file[20], to_file[20];
+  int size;
+  FILE *from, *to;
 
-  /* Open file for reading */
-  from_file = fopen(argv[1], "r");
-  if (!from_file) {
-    perror("File opening for reading failed\n");
-    return 1;
+  // Assignment to variables
+  strncpy(from_file, argv[1], sizeof(from_file));
+  strncpy(to_file, argv[2], sizeof(to_file));
+
+  // Open from file in read mode
+  from = fopen(from_file, "r");
+
+  // Check for file does not exist error
+  if (from == NULL) {
+    printf("duplicate: Couldn't open file %s \n", from_file);
+    exit(EXIT_FAILURE);
   }
 
-  /* Find length of the file opened */
-  fseek(from_file, 0, SEEK_END);
-  length = ftell(from_file);
-  fseek(from_file, 0, SEEK_SET);
-  printf("Length of file: %ld\n", length);
-  copy_size_in_bytes = 4 * length;
-  file_array =
-      (char *)malloc(sizeof(char) * length); /* change the buffer size */
+  // Check for any other errors
+  if (errno != 0) {
+    printf("Error: %s \n", strerror(errno));
+    exit(EXIT_FAILURE);
+  }
 
-  /* Copy contents of file into array */
-  if (file_array) {
-    int reading = fread(file_array, 1, length, from_file);
-    fclose(from_file); /* Close input file */
-    if (reading != length) {
-      printf("Reading file failed!!\n");
-      return 1;
+  // Determine file size by seeking to eof
+  // then asking for position, returns # of bytes
+  fseek(from, 0, SEEK_END);
+  size = ftell(from);
+  // Go back to start of file
+  rewind(from);
+
+  // Open to file in write mode
+  to = fopen(to_file, "w");
+
+  // Check for file does not exist error
+  if (to == NULL) {
+    fclose(from);
+    printf("duplicate: Couldn't open file %s \n", to_file);
+    exit(EXIT_FAILURE);
+  }
+
+  // Check for any other errors
+  if (errno != 0) {
+    fclose(from);
+    fclose(to);
+    printf("Error: %s \n", strerror(errno));
+    exit(EXIT_FAILURE);
+  }
+
+  // Copy each char from from to to file one at a time
+  clock_t start = clock();
+  while ((ch = fgetc(from)) != EOF) {
+    clock_t current = clock();
+    fputc(ch, to);
+    // Check if its been 1 second, if yes, start outputting message
+    if (current >= (start + 1 * CLOCKS_PER_SEC)) {
+      printf("duplicate: still duplicating...");
     }
-  } else {
-    printf("duplicate: DISK FULL!!, Couldn;t allocate enough memory\n",
-           argv[2]);
-    return 1;
   }
 
+  // Success message
+  printf("File copied successfully %d bytes from file %s to %s \n", size,
+         from_file, to_file);
 
-  /* Open file for writing */
-  to_file = fopen(argv[2], "w");
-  if (!to_file) {
-    perror("File opening for writing failed!!\n");
-    return 1;
-  }
+  // Close files
+  fclose(from);
+  fclose(to);
 
-  /* Write array to file char by char */
-  array_len = sizeof(file_array) / sizeof(file_array[0]);
-  for (int i = 0; i <= array_len; ++i) {
-    fputc(file_array[i], to_file);
-    if (ferror(to_file)) {
-      printf("duplicate: Error duplicating file !! DISK FULL\n");
-      fclose(to_file); /* Close output file */
-      return 1;
-    }
-  }
-  printf("duplicate: Copied %ld bytes from file %s to %s\n", copy_size_in_bytes,argv[1],argv[2]);
-  fclose(to_file); /* Close output file */
-
-  return 0; /* Finite incantatem */
+  return 0;
 }
