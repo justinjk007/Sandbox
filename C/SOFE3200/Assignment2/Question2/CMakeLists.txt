@@ -2,4 +2,5 @@ CMAKE_MINIMUM_REQUIRED (VERSION 2.8)
 PROJECT (Question2 C)
 SET (CMAKE_C_STANDARD 11)
 
-ADD_EXECUTABLE(main main.c)
+ADD_EXECUTABLE(client clientSocket.c)
+ADD_EXECUTABLE(server serverSocket.c)
