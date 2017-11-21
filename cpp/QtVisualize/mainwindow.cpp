@@ -2,6 +2,8 @@
 #include <QString>
 #include <QTextBrowser>
 #include <QWidget>
+#include <QtCore>
+#include <QtGui>
 #include "ui_mainwindow.h"
 
 using namespace QtCharts;
@@ -40,13 +42,44 @@ void MainWindow::updateFitnessGraph()
     *series << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3)
             << QPointF(20, 2);
 
-    QChart *chart = new QChart();
+    QChart* chart = new QChart();
     chart->legend()->hide();
     chart->addSeries(series);
     chart->createDefaultAxes();
     chart->setTitle("Simple line chart example");
 
-    QChartView *fitness_graph = new QChartView(ui->fitness_graph);
+    QChartView* fitness_graph = new QChartView(ui->fitness_graph);
     fitness_graph->setRenderHint(QPainter::Antialiasing);
     fitness_graph->setChart(chart);
 }
+
+void MainWindow::updatePentagonGeneration()
+{
+    /**
+     * Updates information on the bottom right widget where pentagon
+     * is generated line by line
+     */
+}
+
+void MainWindow::updatePrimitiveTileGeneration()
+{
+    /**
+     * Updates information on the top left widget where Primitive tile
+     * is drawn after tiling everrything so that the gaps outputted
+     * makes sense
+     */
+}
+
+void PentagonGen::paintEvent(QPaintEvent *e)
+{
+    /**
+     * Updates information on the bottom right widget where pentagon
+     * is generated line by line
+     */
+    QPainter painter(this);
+    painter.setPen(Qt::blue);
+    painter.setFont(QFont("Arial", 30));
+    painter.drawText(rect(), Qt::AlignCenter, "Qt");
+    QWidget::paintEvent(e);
+}
+
