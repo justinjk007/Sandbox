@@ -25,10 +25,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        pentagonGen.cpp \
+        tilingGen.cpp
 
         HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+        pentagonGen.hpp \
+        tilingGen.hpp
 
         FORMS += \
         mainwindow.ui

@@ -69,17 +69,3 @@ void MainWindow::updatePrimitiveTileGeneration()
      * makes sense
      */
 }
-
-void PentagonGen::paintEvent(QPaintEvent *e)
-{
-    /**
-     * Updates information on the bottom right widget where pentagon
-     * is generated line by line
-     */
-    QPainter painter(this);
-    painter.setPen(Qt::blue);
-    painter.setFont(QFont("Arial", 30));
-    painter.drawText(rect(), Qt::AlignCenter, "Qt");
-    QWidget::paintEvent(e);
-}
-

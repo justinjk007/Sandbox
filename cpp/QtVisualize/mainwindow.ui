@@ -14,7 +14,7 @@
    <string/>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="pentagon_gen" native="true">
+   <widget class="pentagonGen" name="pentagon_gen" native="true">
     <property name="geometry">
      <rect>
       <x>380</x>
@@ -95,7 +95,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="tiling_gen" native="true">
+   <widget class="tilingGen" name="tiling_gen" native="true">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -118,6 +118,20 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>tilingGen</class>
+   <extends>QWidget</extends>
+   <header>tilingGen.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>pentagonGen</class>
+   <extends>QWidget</extends>
+   <header>pentagonGen.hpp</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

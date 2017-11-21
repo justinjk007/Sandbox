@@ -27,11 +27,9 @@ int main(int argc, char* argv[])
     w.updateFitnessGraph();  // Update data
 
     // Update tiling generation
-    PentagonGen gen;
 
 
     // After all this time
     w.show();
-    gen.show();
     return a.exec();
 }

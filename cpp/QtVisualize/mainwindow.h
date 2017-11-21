@@ -9,7 +9,6 @@
 namespace Ui
 {
 class MainWindow;
-class PentagonGen;
 }
 
 class MainWindow : public QMainWindow
@@ -26,14 +25,6 @@ class MainWindow : public QMainWindow
 
  private:
 	Ui::MainWindow* ui;
-};
-
-class PentagonGen: public QWidget {
-    Q_OBJECT
-    public:
-        explicit PentagonGen(QWidget *parent = 0);
-    protected:
-        void paintEvent(QPaintEvent *e);
 };
 
 #endif  // MAINWINDOW_H
