@@ -46,26 +46,12 @@ void MainWindow::updateFitnessGraph()
     chart->legend()->hide();
     chart->addSeries(series);
     chart->createDefaultAxes();
+    chart->layout()->setContentsMargins(0, 0, 0, 0);
+    chart->setBackgroundRoundness(0);
     chart->setTitle("Simple line chart example");
 
-    QChartView* fitness_graph = new QChartView(ui->fitness_graph);
+    QChartView* fitness_graph = new QChartView(chart);
     fitness_graph->setRenderHint(QPainter::Antialiasing);
-    fitness_graph->setChart(chart);
-}
-
-void MainWindow::updatePentagonGeneration()
-{
-    /**
-     * Updates information on the bottom right widget where pentagon
-     * is generated line by line
-     */
-}
-
-void MainWindow::updatePrimitiveTileGeneration()
-{
-    /**
-     * Updates information on the top left widget where Primitive tile
-     * is drawn after tiling everrything so that the gaps outputted
-     * makes sense
-     */
+    fitness_graph->setMinimumSize(300,200);
+    ui->left_side->addWidget(fitness_graph);
 }
