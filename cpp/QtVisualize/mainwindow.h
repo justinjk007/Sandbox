@@ -2,9 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtWidgets>
 #include <QtCharts/QChartView>
 #include <QtCharts/QLineSeries>
+#include <QtWidgets>
 
 namespace Ui
 {
@@ -23,8 +23,8 @@ class MainWindow : public QMainWindow
     void updatePentagonGeneration();
     void updatePrimitiveTileGeneration();
 
- private:
-	Ui::MainWindow* ui;
+   private:
+    Ui::MainWindow* ui;
 };
 
 #endif  // MAINWINDOW_H

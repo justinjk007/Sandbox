@@ -7,10 +7,10 @@ class tilingGen : public QWidget
 {
     Q_OBJECT
 
-public:
+   public:
     explicit tilingGen(QWidget* parent = 0);
 
-protected:
+   protected:
     void paintEvent(QPaintEvent* e) override;
 };
 

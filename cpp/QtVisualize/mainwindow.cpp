@@ -52,6 +52,6 @@ void MainWindow::updateFitnessGraph()
 
     QChartView* fitness_graph = new QChartView(chart);
     fitness_graph->setRenderHint(QPainter::Antialiasing);
-    fitness_graph->setMinimumSize(300,100);
+    fitness_graph->setMinimumSize(300, 100);
     ui->left_side->addWidget(fitness_graph);
 }
