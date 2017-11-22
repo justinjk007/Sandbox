@@ -9,13 +9,17 @@ pentagonGen::pentagonGen(QWidget* parent) : QWidget(parent)
 
 void pentagonGen::paintEvent(QPaintEvent* e)
 {
-    QLinearGradient gradient(e->rect().topLeft(), e->rect().bottomRight());
-    gradient.setColorAt(0, QColor(212,175,55));
-    gradient.setColorAt(1, QColor(212,175,55));
+    // Make custom pen
+    QPen pen;
+    pen.setWidth(3);
+    pen.setColor(QColor(42,161,152));
+
+    // Make the line and/or lines
     QLineF line(10.0, 80.0, 90.0, 20.0);
+
+    // Now draw the line to widget
     QPainter painter(this);
-    painter.fillRect(e->rect(), gradient);
-    // LinearGradientPattern
-    painter.setPen(Qt::blue);
+    painter.fillRect(e->rect(), QColor(238,232,213)); // Background color
+    painter.setPen(pen);
     painter.drawLine(line);
 }
