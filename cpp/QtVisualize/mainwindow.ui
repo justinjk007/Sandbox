@@ -6,17 +6,35 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>658</width>
-    <height>441</height>
+    <width>866</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string/>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>800</width>
+     <height>600</height>
+    </size>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <layout class="QVBoxLayout" name="left_side">
+     <layout class="QVBoxLayout" name="left_side" stretch="0">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
       <item>
        <widget class="tilingGen" name="tiling_gen" native="true">
         <property name="sizePolicy">
@@ -38,15 +56,22 @@
     <item>
      <layout class="QVBoxLayout" name="right_side">
       <property name="spacing">
-       <number>5</number>
+       <number>2</number>
       </property>
       <item>
-       <widget class="QTextBrowser" name="pentagon_info"/>
+       <widget class="QTextBrowser" name="pentagon_info">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>5</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
       </item>
       <item>
        <layout class="QGridLayout" name="button_layout">
         <property name="spacing">
-         <number>3</number>
+         <number>1</number>
         </property>
         <item row="0" column="0">
          <widget class="QPushButton" name="start_btn">
@@ -58,6 +83,9 @@
           </property>
           <property name="cursor">
            <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="toolTip">
+           <string>Start Differential Evolution</string>
           </property>
           <property name="autoFillBackground">
            <bool>false</bool>
@@ -75,6 +103,9 @@
         </item>
         <item row="0" column="1">
          <widget class="QPushButton" name="stop_btn">
+          <property name="toolTip">
+           <string>Stop and reset mutation objects</string>
+          </property>
           <property name="styleSheet">
            <string notr="true">font: 10pt &quot;Consolas&quot;;</string>
           </property>
@@ -119,7 +150,7 @@
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
           <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
+          <verstretch>3</verstretch>
          </sizepolicy>
         </property>
         <property name="minimumSize">

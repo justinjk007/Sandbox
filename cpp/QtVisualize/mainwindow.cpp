@@ -48,10 +48,10 @@ void MainWindow::updateFitnessGraph()
     chart->createDefaultAxes();
     chart->layout()->setContentsMargins(0, 0, 0, 0);
     chart->setBackgroundRoundness(0);
-    chart->setTitle("Simple line chart example");
+    chart->setTitle("Fitness of generated samples");
 
     QChartView* fitness_graph = new QChartView(chart);
     fitness_graph->setRenderHint(QPainter::Antialiasing);
-    fitness_graph->setMinimumSize(300,200);
+    fitness_graph->setMinimumSize(300,100);
     ui->left_side->addWidget(fitness_graph);
 }
