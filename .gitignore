@@ -35,3 +35,6 @@ build-QtVisualize-Desktop_Qt_5_9_1_MSVC2015_64bit-Debug/
 build-QtVisualize-Desktop_Qt_5_9_2_MSVC2017_64bit-Debug/
 build-linechart-Desktop_Qt_5_9_1_MSVC2015_64bit-Debug/
 build-linechart-Desktop_Qt_5_9_2_MSVC2017_64bit-Debug/
+
+# Ignore python binaries
+*.pyc
