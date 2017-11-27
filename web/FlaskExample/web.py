@@ -25,15 +25,27 @@ def index():
 
 @app.route('/lt', methods=['GET', 'POST'])
 def lt():
-    "Defines method that returns latest tweet view"
+    "View 09: Defines method that returns latest tweet view"
     tweet = db.get_latestTweet()[0]
     return render_template("latest_tweet.html", text_id=tweet[0], user_id=tweet[1], msg=tweet[2], date=tweet[3], source=tweet[4], loc=tweet[5])
 
 @app.route('/count', methods=['GET', 'POST'])
 def count():
-    "Defines method that returns total number of tweets in the database"
+    "View 10: Defines method that returns total number of tweets in the database"
     count = db.get_totalTweets()[0]
     return render_template("count_tweets.html", count=count[0])
+
+@app.route('/user', methods=['GET', 'POST'])
+def user():
+    "View 02: Defines method that returns the users in the database"
+    user = db.get_Names()[0]
+    return render_template("display_users.html", user=user[0])
+
+@app.route('/join', methods=['GET', 'POST'])
+def join():
+    "View 01: Defines method that returns a join of 3 tables"
+    join = db.get_all()
+    return render_template("join_tables.html", join_table = join)
 
 # @app.route('/get_filter', methods=['POST'])
 # def get_filter():

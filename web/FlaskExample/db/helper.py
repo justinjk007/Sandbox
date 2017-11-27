@@ -10,7 +10,7 @@ class Connection:
         return self.cur.fetchall()
 
     def get_all(self):
-        self.cur.execute('select * from filter as F INNER JOIN tweet as T ON F.text_id = T.text_id INNER JOIN users as U ON T.user_id = user_id')
+        self.cur.execute('select * from filter as F INNER JOIN tweet as T ON F.text_id = T.text_id INNER JOIN users as U ON T.user_id = U.user_id')
         return  self.cur.fetchall()
 
     def get_Names(self):
