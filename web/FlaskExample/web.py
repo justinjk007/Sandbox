@@ -29,11 +29,11 @@ def lt():
     tweet = db.get_latestTweet()[0]
     return render_template("latest_tweet.html", text_id=tweet[0], user_id=tweet[1], msg=tweet[2], date=tweet[3], source=tweet[4], loc=tweet[5])
 
-@app.route('/lt', methods=['GET', 'POST'])
-def tables():
-    "Defines method that returns the correct html file for the table page"
-    tweet = db.get_latestTweet()[0]
-    return render_template("latest_tweet.html", text_id=tweet[0], user_id=tweet[1], msg=tweet[2], date=tweet[3], source = tweet[4], loc=tweet[5])
+@app.route('/count', methods=['GET', 'POST'])
+def count():
+    "Defines method that returns total number of tweets in the database"
+    count = db.get_totalTweets()[0]
+    return render_template("count_tweets.html", count=count[0])
 
 # @app.route('/get_filter', methods=['POST'])
 # def get_filter():
