@@ -59,6 +59,30 @@ def full_join():
     join = db.get_locationOfTweet()
     return render_template("full_join_tables.html", join_table=join)
 
+@app.route('/union', methods=['GET', 'POST'])
+def union():
+    "View 05: Defines method that returns users in the table using UNION and stuff .. lol"
+    user = db.get_userid()[0]
+    return render_template("union_result.html", user=user[0])
+
+@app.route('/retweet', methods=['GET', 'POST'])
+def retweet():
+    "View 06: Defines method that returns the average retweet count"
+    count = db.get_averageRetweet()[0]
+    return render_template("avg_retweets.html", count=count[0])
+
+@app.route('/highest', methods=['GET', 'POST'])
+def highest():
+    "View 08: Defines method that returns the highest number of tweets in a day"
+    count = db.get_maxTweetInDay()[0]
+    return render_template("highest_tweet_count.html", count=count[0])
+
+@app.route('/china', methods=['GET', 'POST'])
+def china():
+    "View 07: Defines method that returns the tweets with china in it"
+    tweets = db.get_chinaTweet()
+    return render_template("china_tweets.html", message=tweets)
+
 # create simple api that takes in id and response with stats of said player
 # ex http://localhost:5000/api/201960
 @app.route('/test/<id>', methods=['GET','POST'])

@@ -30,7 +30,7 @@ class Connection:
         return self.cur.fetchall()
 
     def get_chinaTweet(self):
-        self.cur.execute('select message FROM tweet WHERE message LIKE '%China%'')
+        self.cur.execute("select message FROM tweet WHERE message LIKE '%China%'")
         return self.cur.fetchall()
 
     def get_averageRetweet(self):
