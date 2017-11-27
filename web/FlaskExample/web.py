@@ -23,29 +23,17 @@ def index():
     testing = "12ddef2"
     return render_template("index.html", test_var=testing)
 
-@app.route('/lt', methods=['GET', 'POST'])
-def lt():
-    "View 09: Defines method that returns latest tweet view"
-    tweet = db.get_latestTweet()[0]
-    return render_template("latest_tweet.html", text_id=tweet[0], user_id=tweet[1], msg=tweet[2], date=tweet[3], source=tweet[4], loc=tweet[5])
-
-@app.route('/count', methods=['GET', 'POST'])
-def count():
-    "View 10: Defines method that returns total number of tweets in the database"
-    count = db.get_totalTweets()[0]
-    return render_template("count_tweets.html", count=count[0])
+@app.route('/join', methods=['GET', 'POST'])
+def join():
+    "View 01: Defines method that returns a join of 3 tables"
+    join = db.get_all()
+    return render_template("join_tables.html", join_table=join)
 
 @app.route('/user', methods=['GET', 'POST'])
 def user():
     "View 02: Defines method that returns the users in the database"
     user = db.get_Names()[0]
     return render_template("display_users.html", user=user[0])
-
-@app.route('/join', methods=['GET', 'POST'])
-def join():
-    "View 01: Defines method that returns a join of 3 tables"
-    join = db.get_all()
-    return render_template("join_tables.html", join_table=join)
 
 @app.route('/avg', methods=['GET', 'POST'])
 def avg():
@@ -71,17 +59,29 @@ def retweet():
     count = db.get_averageRetweet()[0]
     return render_template("avg_retweets.html", count=count[0])
 
+@app.route('/china', methods=['GET', 'POST'])
+def china():
+    "View 07: Defines method that returns the tweets with china in it"
+    tweets = db.get_chinaTweet()
+    return render_template("china_tweets.html", message=tweets)
+
 @app.route('/highest', methods=['GET', 'POST'])
 def highest():
     "View 08: Defines method that returns the highest number of tweets in a day"
     count = db.get_maxTweetInDay()[0]
     return render_template("highest_tweet_count.html", count=count[0])
 
-@app.route('/china', methods=['GET', 'POST'])
-def china():
-    "View 07: Defines method that returns the tweets with china in it"
-    tweets = db.get_chinaTweet()
-    return render_template("china_tweets.html", message=tweets)
+@app.route('/lt', methods=['GET', 'POST'])
+def lt():
+    "View 09: Defines method that returns latest tweet view"
+    tweet = db.get_latestTweet()[0]
+    return render_template("latest_tweet.html", text_id=tweet[0], user_id=tweet[1], msg=tweet[2], date=tweet[3], source=tweet[4], loc=tweet[5])
+
+@app.route('/count', methods=['GET', 'POST'])
+def count():
+    "View 10: Defines method that returns total number of tweets in the database"
+    count = db.get_totalTweets()[0]
+    return render_template("count_tweets.html", count=count[0])
 
 # create simple api that takes in id and response with stats of said player
 # ex http://localhost:5000/api/201960
