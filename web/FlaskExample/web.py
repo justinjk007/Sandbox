@@ -45,46 +45,19 @@ def user():
 def join():
     "View 01: Defines method that returns a join of 3 tables"
     join = db.get_all()
-    return render_template("join_tables.html", join_table = join)
+    return render_template("join_tables.html", join_table=join)
 
-# @app.route('/get_filter', methods=['POST'])
-# def get_filter():
-#     filter_form = request.form['filter']
-#     text_id = 933291745722351617
-#     tweets = db.get_tweets(text_id)
-#     return render_template("tables.html",form=filter_form)
+@app.route('/avg', methods=['GET', 'POST'])
+def avg():
+    "View 03: Defines method that returns average number of fav tweets"
+    count = db.get_averageFavourite()[0]
+    return render_template("average_fav_tweets.html", fav_count=count[0])
 
-# @app.route('/', methods=['GET', 'POST'])
-# def index():
-#     class SelectTeamForm(Form):
-#         teams = db.get_teams()
-#         name = SelectField(coerce=int, choices=teams, default=1610612737L)
-#     form = SelectTeamForm()
-#     print(form.errors)
-#     # handle post request in form
-#     if form.validate_on_submit():
-#         session['TEAM_ID'] = form.name.data
-#         return redirect('/player')
-#     return render_template("index.html",form=form)
-
-# @app.route('/player', methods=['GET','POST'])
-# def player():
-#     class SelectPlayerForm(Form):
-#         team_id = session['TEAM_ID']
-#         players = db.get_players(team_id)
-#         name = SelectField(coerce=int, choices=players)
-#     form = SelectPlayerForm()
-#     # handle post request in form
-#     if form.validate_on_submit():
-#         session['PLAYER_ID'] = form.name.data
-#         return redirect('/stats')
-#     return render_template("player.html", form=form)
-
-# @app.route('/stats', methods=['POST', 'GET'])
-# def stats():
-#     player_id = session['PLAYER_ID']
-#     stats = db.get_stats(player_id)[0]
-#     return render_template("stats.html", name=stats[1], blocks=stats[9], drfgm=stats[11], drfga=stats[12], drfgpct=stats[13])
+@app.route('/full_join', methods=['GET', 'POST'])
+def full_join():
+    "View 04: Defines method that returns a full join of tables"
+    join = db.get_locationOfTweet()
+    return render_template("full_join_tables.html", join_table=join)
 
 # create simple api that takes in id and response with stats of said player
 # ex http://localhost:5000/api/201960

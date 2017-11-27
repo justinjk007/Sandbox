@@ -22,7 +22,7 @@ class Connection:
         return self.cur.fetchall()
 
     def get_locationOfTweet(self):
-        self.cur.execute('select st from tweet FULL OUTER JOIN users ON tweet.text_id = users.text_id')
+        self.cur.execute('select st from tweet FULL OUTER JOIN users ON tweet.text_id = users.user_id')
         return self.cur.fetchall()
 
     def get_userid(self):
