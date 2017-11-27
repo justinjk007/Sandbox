@@ -17,9 +17,23 @@ CsrfProtect(app)
 db = connection.Connection()
 
 
-# @app.route('/', methods=['GET', 'POST'])
-# def index():
-#     return render_template("index.html")
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    "Defines method that returns the correct html file for the home page"
+    testing = "12ddef2"
+    return render_template("index.html", test_var=testing)
+
+@app.route('/lt', methods=['GET', 'POST'])
+def lt():
+    "Defines method that returns latest tweet view"
+    tweet = db.get_latestTweet()[0]
+    return render_template("latest_tweet.html", text_id=tweet[0], user_id=tweet[1], msg=tweet[2], date=tweet[3], source=tweet[4], loc=tweet[5])
+
+@app.route('/lt', methods=['GET', 'POST'])
+def tables():
+    "Defines method that returns the correct html file for the table page"
+    tweet = db.get_latestTweet()[0]
+    return render_template("latest_tweet.html", text_id=tweet[0], user_id=tweet[1], msg=tweet[2], date=tweet[3], source = tweet[4], loc=tweet[5])
 
 # @app.route('/get_filter', methods=['POST'])
 # def get_filter():
