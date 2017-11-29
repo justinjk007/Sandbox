@@ -25,7 +25,7 @@ GRTAGS
 GTAGS
 
 # Ignored Qt files
-*.pro.user
+*.user
 
 # Ignore java class files
 *.Class
