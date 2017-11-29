@@ -1,10 +1,10 @@
 #include "mainwindow.h"
-#include "backend.hpp"
 #include <QString>
 #include <QTextBrowser>
 #include <QWidget>
 #include <QtCore>
 #include <QtGui>
+#include "backend.hpp"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -30,6 +30,6 @@ void MainWindow::updatePentagonInfo(QString content)
 void MainWindow::on_start_clicked()
 {
     Backend test;
-    QObject::connect(&test, SIGNAL(contentChanged(content)), this, SLOT(updatePentagonInfo(content)));
+    connect(&test, &Backend::contentChanged, this, &MainWindow::updatePentagonInfo);
     test.generateRandom();
 }
