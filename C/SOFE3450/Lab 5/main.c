@@ -107,24 +107,12 @@ void draw_line(int x0, int y0, int x1, int y1, int color, int backbuffer)
     /* Draw a line - either go along the x-axis (steep = 0) or along
      * the y-axis (steep = 1). The code is replicated to be fast on
      * low optimization levels. */
-    if (steep == 1) {
-        // draw pixel( y,x`)
-        size_t i;
-        for (i = x_0; i < x_1; ++i) {
+    size_t i;
+    for (i = x_0; i < x_1; ++i) {
+        if (steep == 1)
             helper_plot_pixel(buffer_start, y, i, color);
-            error = error + (deltay / deltax);
-            if (error >= 0.5) {
-                y     = y + ystep;
-                error = error - 1;
-            }
-        }
-
-    } else {
-        // draw pixel( x,y)
-        size_t i;
-        for (i = x_0; i < x_1; ++i) {
+        else
             helper_plot_pixel(buffer_start, i, y, color);
-        }
         error = error + (deltay / deltax);
         if (error >= 0.5) {
             y     = y + ystep;
