@@ -17,7 +17,7 @@ void Backend::generateRandom()
         QString content =
             QString(
                 "<span style=\" font-size:18pt; font-weight:300; font-family:Hack,Arial;\"\\>") +
-            "Sides: " + randomm + "</span>";
+            "Random number is : " + randomm + "</span>";
         this->setContent(content);
     }
 }
