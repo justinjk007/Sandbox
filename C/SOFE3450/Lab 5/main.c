@@ -108,10 +108,28 @@ void draw_line(int x0, int y0, int x1, int y1, int color, int backbuffer)
      * the y-axis (steep = 1). The code is replicated to be fast on
      * low optimization levels. */
     if (steep == 1) {
-        // put your code here
+        // draw pixel( y,x`)
+        size_t i;
+        for (i = x_0; i < x_1; ++i) {
+            helper_plot_pixel(buffer_start, y, i, color);
+            error = error + (deltay / deltax);
+            if (error >= 0.5) {
+                y     = y + ystep;
+                error = error - 1;
+            }
+        }
 
     } else {
-        // put your code here
+        // draw pixel( x,y)
+        size_t i;
+        for (i = x_0; i < x_1; ++i) {
+            helper_plot_pixel(buffer_start, i, y, color);
+        }
+        error = error + (deltay / deltax);
+        if (error >= 0.5) {
+            y     = y + ystep;
+            error = error - 1;
+        }
     }
 }
 
