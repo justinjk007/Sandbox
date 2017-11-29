@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QString>
+#include "externalClass.hpp"
 #include "mainwindow.h"
 
 using namespace std;
@@ -14,6 +15,9 @@ int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
+    externalClass test;
+
+    QObject::connect(&test, SIGNAL(contentChanged(content)), &w, SLOT(updatePentagonInfo(content)));
 
     // Window settings
     w.setWindowTitle("Pentagonal Tiling - Visulization");
@@ -33,6 +37,8 @@ int main(int argc, char* argv[])
     // Update tiling generation
 
     // After all this time
+	test.generateRandom();
     w.show();
+    
     return a.exec();
 }

@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::updatePentagonInfo(const QString& content)
+void MainWindow::updatePentagonInfo(QString content)
 {
     /**
      * This method updates information about the pentagon in the text
@@ -54,4 +54,5 @@ void MainWindow::updateFitnessGraph()
     fitness_graph->setRenderHint(QPainter::Antialiasing);
     fitness_graph->setMinimumSize(300, 100);
     ui->left_side->addWidget(fitness_graph);
+    fitness_graph->repaint();
 }
