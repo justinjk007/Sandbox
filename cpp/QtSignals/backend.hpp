@@ -2,6 +2,7 @@
 #define EXTERNALCLASS_HPP
 
 #include <QObject>
+#include <QCoreApplication>
 #include <QString>
 
 class Backend : public QObject
@@ -10,8 +11,6 @@ class Backend : public QObject
 
    public:
     void generateRandom();
-   public slots:
-    void setContent(QString content);
    signals:
     void contentChanged(QString content);
 };
