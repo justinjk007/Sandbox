@@ -9,10 +9,10 @@ class graphWidget : public QWidget
 {
     Q_OBJECT
 
-   public:
+public:
     explicit graphWidget(QWidget* parent = 0);
 
-   protected:
+protected:
     void paintEvent(QPaintEvent* e) override;
 };
 

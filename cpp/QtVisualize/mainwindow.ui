@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>864</width>
-    <height>604</height>
+    <width>866</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,29 +28,13 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <layout class="QVBoxLayout" name="left_side" stretch="0,0">
+     <layout class="QVBoxLayout" name="left_side" stretch="0">
       <property name="spacing">
        <number>2</number>
       </property>
       <property name="sizeConstraint">
        <enum>QLayout::SetDefaultConstraint</enum>
       </property>
-      <item>
-       <widget class="graphWidget" name="graph_widget" native="true">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>150</width>
-          <height>150</height>
-         </size>
-        </property>
-       </widget>
-      </item>
       <item>
        <widget class="tilingGen" name="tiling_gen" native="true">
         <property name="sizePolicy">
@@ -65,7 +49,6 @@
           <height>200</height>
          </size>
         </property>
-        <zorder>pentagon_gen</zorder>
        </widget>
       </item>
      </layout>
@@ -76,18 +59,12 @@
        <number>2</number>
       </property>
       <item>
-       <widget class="textWidget" name="text_widget" native="true">
+       <widget class="QTextBrowser" name="pentagon_info">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
+          <verstretch>5</verstretch>
          </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>150</width>
-          <height>150</height>
-         </size>
         </property>
        </widget>
       </item>
@@ -170,9 +147,6 @@
       </item>
       <item>
        <widget class="pentagonGen" name="pentagon_gen" native="true">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
           <horstretch>0</horstretch>
@@ -183,12 +157,6 @@
          <size>
           <width>150</width>
           <height>150</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -213,18 +181,6 @@
    <class>pentagonGen</class>
    <extends>QWidget</extends>
    <header>pentagonGen.hpp</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>graphWidget</class>
-   <extends>QWidget</extends>
-   <header>graphwidget.hpp</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>textWidget</class>
-   <extends>QWidget</extends>
-   <header>textwidget.hpp</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
