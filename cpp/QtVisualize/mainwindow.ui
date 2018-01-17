@@ -65,6 +65,7 @@
           <height>200</height>
          </size>
         </property>
+        <zorder>pentagon_gen</zorder>
        </widget>
       </item>
      </layout>
@@ -175,7 +176,7 @@
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
           <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
+          <verstretch>3</verstretch>
          </sizepolicy>
         </property>
         <property name="minimumSize">
