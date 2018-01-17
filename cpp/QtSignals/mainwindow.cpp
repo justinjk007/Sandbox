@@ -33,6 +33,6 @@ void MainWindow::on_start_clicked()
     Backend test;
     connect(&test, &Backend::contentChanged, this, &MainWindow::updatePentagonInfo);
     std::thread worker_thread(&Backend::generateRandom,&test);
-    // worker_thread.join();
+    worker_thread.join();
     // test.generateRandom();
 }
