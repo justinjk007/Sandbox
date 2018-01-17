@@ -17,13 +17,11 @@ class MainWindow : public QMainWindow
     explicit MainWindow(QWidget* parent = 0);
     ~MainWindow();
 
- private:
+   private:
     Ui::MainWindow* ui;
    public slots:
     void updatePentagonInfo(QString);
-
-    public slots:
-	void on_start_clicked();
+    void on_start_clicked();
 };
 
 #endif  // MAINWINDOW_H

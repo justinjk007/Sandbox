@@ -19,6 +19,6 @@ void Backend::generateRandom()
                 "<span style=\" font-size:18pt; font-weight:300; font-family:Hack,Arial;\"\\>") +
             "Random number is : " + QString::number(randomm) + "</span>";
         emit contentChanged(content);  // Emit the signal
-        QCoreApplication::processEvents();
+        // QCoreApplication::processEvents();
     }
 }

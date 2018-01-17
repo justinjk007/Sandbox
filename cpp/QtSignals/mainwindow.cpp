@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QtCore>
 #include <QtGui>
+#include <thread>
 #include "backend.hpp"
 #include "ui_mainwindow.h"
 
@@ -31,5 +32,7 @@ void MainWindow::on_start_clicked()
 {
     Backend test;
     connect(&test, &Backend::contentChanged, this, &MainWindow::updatePentagonInfo);
-    test.generateRandom();
+    std::thread worker_thread(&Backend::generateRandom,&test);
+    // worker_thread.join();
+    // test.generateRandom();
 }

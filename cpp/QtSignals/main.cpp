@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QString>
+#include "backend.hpp"
 #include "mainwindow.h"
 
 using namespace std;
@@ -16,9 +17,6 @@ int main(int argc, char* argv[])
 
     // Window settings
     w.setWindowTitle("Sandman");
-
-    // Update the info about pentagons
-    w.updatePentagonInfo("This is a test\n");  // Update data
 
     w.show();
     return a.exec();
