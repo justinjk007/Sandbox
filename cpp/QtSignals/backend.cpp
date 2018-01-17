@@ -2,11 +2,12 @@
 #include <chrono>
 #include <cstdlib>
 #include <ctime>
+#include <thread>
 #include <QDebug>
 
 using namespace std;
 
-void Backend::run()
+void Backend::process()
 {
     qDebug("run method is called");
     int min = 90;

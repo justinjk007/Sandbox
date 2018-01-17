@@ -4,14 +4,13 @@
 #include <QObject>
 #include <QCoreApplication>
 #include <QString>
-#include <QThread>
 
-class Backend : public QThread
+class Backend : public QObject
 {
     Q_OBJECT
 
-   public:
-    void run();
+   public slots:
+    void process();
    signals:
     void contentChanged(QString content);
 };
