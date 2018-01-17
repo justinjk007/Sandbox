@@ -7,10 +7,10 @@ class textWidget : public QWidget
 {
     Q_OBJECT
 
-public:
+   public:
     explicit textWidget(QWidget* parent = 0);
 
-protected:
+   protected:
     void paintEvent(QPaintEvent* e) override;
 };
 

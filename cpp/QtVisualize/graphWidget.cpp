@@ -7,7 +7,7 @@ graphWidget::graphWidget(QWidget* parent) : QWidget(parent)
     ;
 }
 
-void pentagonGen::paintEvent(QPaintEvent* e)
+void graphWidget::paintEvent(QPaintEvent* e)
 {
     /**
      * This method updates the content of Fitnessgraph
@@ -25,7 +25,7 @@ void pentagonGen::paintEvent(QPaintEvent* e)
     chart->legend()->hide();
     chart->addSeries(series);
     chart->createDefaultAxes();
-    chart->layout()->setContentsMargins(0, 0, 0, 0);
+    // chart->layout()->setContentsMargins(0, 0, 0, 0);
     chart->setBackgroundRoundness(0);
     chart->setTitle("Fitness of generated samples");
 

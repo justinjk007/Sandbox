@@ -18,14 +18,9 @@ class MainWindow : public QMainWindow
    public:
     explicit MainWindow(QWidget* parent = 0);
     ~MainWindow();
-    void updatePentagonGeneration();
-    void updatePrimitiveTileGeneration();
-    void updateFitnessGraph();
 
    private:
     Ui::MainWindow* ui;
-   public slots:
-    void updatePentagonInfo(QString);
 };
 
 #endif  // MAINWINDOW_H

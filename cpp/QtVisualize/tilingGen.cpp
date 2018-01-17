@@ -11,7 +11,7 @@ void tilingGen::paintEvent(QPaintEvent* e)
 {
     // Make custom pen
     QPen pen;
-    pen.setWidthF(0.3); // Set width with floating point precision
+    pen.setWidthF(0.3);  // Set width with floating point precision
     pen.setColor(QColor(42, 161, 152));
 
     // make a brush to fill the polygon

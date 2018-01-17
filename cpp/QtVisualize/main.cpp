@@ -15,9 +15,9 @@ int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    externalClass test;
 
-    QObject::connect(&test, SIGNAL(contentChanged(content)), &w, SLOT(updatePentagonInfo(content)));
+    // externalClass test;
+    // QObject::connect(&test, SIGNAL(contentChanged(content)), &w, SLOT(updatePentagonInfo(content)));
 
     // Window settings
     w.setWindowTitle("Pentagonal Tiling - Visulization");
@@ -29,16 +29,11 @@ int main(int argc, char* argv[])
     QString content =
         QString("<span style=\" font-size:18pt; font-weight:300; font-family:Hack,Arial;\"\\>") +
         "Sides: " + side1 + "</span>";
-    w.updatePentagonInfo(content);  // Update data
-
-    // Update the fitness graph
-    w.updateFitnessGraph();  // Update data
-
-    // Update tiling generation
+    // w.updatePentagonInfo(content);  // Update data
 
     // After all this time
-	test.generateRandom();
+    // test.generateRandom();
     w.show();
-    
+
     return a.exec();
 }
