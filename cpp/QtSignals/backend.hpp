@@ -13,6 +13,7 @@ class Backend : public QObject
     void process();
    signals:
     void contentChanged(QString content);
+    void finished();
 };
 
 #endif /* EXTERNALCLASS_HPP */

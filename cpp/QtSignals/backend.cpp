@@ -1,9 +1,9 @@
 #include "backend.hpp"
+#include <QDebug>
 #include <chrono>
 #include <cstdlib>
 #include <ctime>
 #include <thread>
-#include <QDebug>
 
 using namespace std;
 
@@ -21,7 +21,8 @@ void Backend::process()
                 "<span style=\" font-size:18pt; font-weight:300; font-family:Hack,Arial;\"\\>") +
             "Random number is : " + QString::number(randomm) + "</span>";
         emit contentChanged(content);  // Emit the signal
-	qDebug("This is after emitting the signal");
+        qDebug("This is after emitting the signal");
         // QCoreApplication::processEvents();
     }
+    emit finished();
 }

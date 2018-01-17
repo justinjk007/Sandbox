@@ -36,6 +36,11 @@ void MainWindow::on_start_clicked()
     Backend* test = new Backend();
     test->moveToThread(worker_thread);
     connect(test, &Backend::contentChanged, this, &MainWindow::updatePentagonInfo);
+    connect(worker_thread, SIGNAL(started()), test, SLOT(process()));
+    connect(test, SIGNAL(finished()), worker_thread, SLOT(quit()));
+    connect(test, SIGNAL(finished()), test, SLOT(deleteLater()));
+    connect(worker_thread, SIGNAL(finished()), worker_thread, SLOT(deleteLater()));
+    // Add other needed signals from here https://mayaposch.wordpress.com/2011/11/01/how-to-really-truly-use-qthreads-the-full-explanation/
     qDebug("Threads created and signals connected");
     worker_thread->start();
     qDebug("Thead started");
