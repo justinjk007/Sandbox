@@ -4,13 +4,14 @@
 #include <QObject>
 #include <QCoreApplication>
 #include <QString>
+#include <QThread>
 
-class Backend : public QObject
+class Backend : public QThread
 {
     Q_OBJECT
 
    public:
-    void generateRandom();
+    void run();
    signals:
     void contentChanged(QString content);
 };

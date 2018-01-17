@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QtCore>
 #include <QtGui>
+#include <QDebug>
+#include <QThread>
 #include <thread>
 #include "backend.hpp"
 #include "ui_mainwindow.h"
@@ -30,9 +32,11 @@ void MainWindow::updatePentagonInfo(QString content)
 
 void MainWindow::on_start_clicked()
 {
-    Backend test;
-    connect(&test, &Backend::contentChanged, this, &MainWindow::updatePentagonInfo);
-    std::thread worker_thread(&Backend::generateRandom,&test);
-    worker_thread.join();
-    // test.generateRandom();
+    QThread* worker_thread = new QThread;
+    Backend* test = new Backend();
+    test->moveToThread(worker_thread);
+    connect(test, &Backend::contentChanged, this, &MainWindow::updatePentagonInfo);
+    qDebug("Threads created and signals connected");
+    worker_thread->start();
+    qDebug("Thead started");
 }
