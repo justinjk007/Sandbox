@@ -27,7 +27,7 @@ This is a sandbox and I am *SANDMAN*
 
 Write =README= files as if you are explaining a younger yourself what is
 going on in your repository, as if the person looking at your code is
-a 6th grade student starting to learn code.
+a 6th grade student starting to learn +code+ programming.
 
 As mentioned above, although no readme's(mostly) are written in this
 repository, I will help you out if your stuck on something, don't just
