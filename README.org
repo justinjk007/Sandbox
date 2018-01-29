@@ -19,7 +19,7 @@ You won't find any readme's in any of the projects because I don't get
 time to maintain them too. But you can open an issue and I will reply
 to you on the same day guaranteed. 👍 👍 .
 
-This is a sandbox I am *SANDMAN*
+This is a sandbox and I am *SANDMAN*
 
 [[file:test.org][This is a test!]]
 
