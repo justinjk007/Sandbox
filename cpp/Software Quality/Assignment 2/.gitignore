@@ -1,6 +1,0 @@
-*build
-
-*.pdf
-*.tex
-
-!/bin/*
