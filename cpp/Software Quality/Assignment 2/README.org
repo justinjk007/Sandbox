@@ -28,3 +28,5 @@
 * Development process
 
 Write stuff here
+
+[[./img/run_exec_windows.png]]
