@@ -18,6 +18,7 @@
   \vspace{40mm}
   \begin{Large}
       \textbf{Assignment 2, Report}\\
+      \textbf{Tic-Tac-Toe}\\
       \vspace{20mm}
       \textbf{Justin Kaipada 100590167}
   \end{Large}
@@ -27,6 +28,16 @@
 
 * Development process
 
-Write stuff here
+For the development of the game I followed agile development
+process. Although 3 weeks is more than enough time for a small game
+like *tic-tac-toe*, the simplicity of the project works well with agile
+development the most. Incremented development or Waterfall was
+unnecessarily complex for this small project. Doing agile development,
+I was already experienced with *Continuous Integration* for both GNU
+Linux and Windows environments. This helped me to support and make
+sure that my source code can be compiled and ran on both the platforms
+from the beginning.
 
-[[./img/run_exec_windows.png]]
+* Functionality
+
+My project implements a simple *tic-tac-toe* game.
