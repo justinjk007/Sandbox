@@ -22,7 +22,9 @@ int main()
         temp = temp->next;
     }
 
+    printf("poping %d\n",queue->value);
     queue = dequeue(queue);
+    printf("poping %d\n",queue->value);
     queue = dequeue(queue);
 
     printf("\nAfter dequeuing 2 elements\n");
