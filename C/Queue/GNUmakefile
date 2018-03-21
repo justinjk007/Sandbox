@@ -1,5 +1,5 @@
 CC      = gcc
-CFLAGS  = -g -Wall -Wextra
+CFLAGS  = -g3 -Wall -Wextra
 CSTANDARD = -std=c11
 BIN	= ./bin
 
