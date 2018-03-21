@@ -1,17 +1,16 @@
-#include "Queue.h"
 #include <stdio.h>
+#include "Queue.h"
 
 int main()
 {
-    printf("Ellooo\n");
-    Queue * test;
-    enqueue(test,2);
-    enqueue(test,2);
-    enqueue(test,2);
-    enqueue(test,2);
-    while(test == NULL){
-	printf("%d",test->data);
-	test = test->next;
+    struct node* queue = NULL;
+    queue              = enqueue(queue, 2);
+    queue              = enqueue(queue, 3);
+    queue              = enqueue(queue, 4);
+    queue              = enqueue(queue, 5);
+    while (queue != NULL) {
+        printf("%d\n", queue->value);
+        queue = queue->next;
     }
     return 0;
 }

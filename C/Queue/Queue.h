@@ -3,29 +3,42 @@
 
 #include <stdlib.h>
 
-typedef struct Queue {
-    int data;
-    struct Queue* next;
-} Queue;
+struct node {
+    int value;
+    struct node* next;
+};
 
-typedef Queue* Node;
-
-Node createNode()
+struct node* enqueue(struct node* queue, int value)
 {
-    Node temp;
-    temp       = (Node)malloc(sizeof(Queue));
-    temp->next = NULL;
-    return temp;
+    struct node* new_node = NULL;
+    new_node              = (struct node*)malloc(sizeof(struct node));
+    if (new_node == NULL) {
+        exit(-1);
+        return NULL;
+    }
+    new_node->value = value;
+    new_node->next  = NULL;
+    if (queue == NULL) {
+        queue = new_node;
+    } else {
+        while (queue->next != NULL) {
+            queue = queue->next;
+        }
+        queue->next = new_node;
+    }
+    return new_node;
 }
 
-Node enqueue(Node head, int val)
+struct node* dequeue(struct node* queue)
 {
-    Node temp;
-    temp       = createNode();
-    temp->data = val;
-    temp = head;
-    head = temp;
-    return head;
+    struct node* temp;
+    if (queue == NULL) {
+        return NULL;
+    } else {
+        temp = queue->next;
+        free(queue);
+        return temp;
+    }
 }
 
 #endif /* QUEUE_HPP */
