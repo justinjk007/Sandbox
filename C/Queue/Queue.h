@@ -3,35 +3,33 @@
 
 #include <stdlib.h>
 
-struct node {
+typedef struct node {
     int value;
     struct node* next;
-};
+} Queue;
 
-struct node* enqueue(struct node* queue, int value)
+Queue* enqueue(Queue* queue, int value)
 {
-    struct node* new_node = NULL;
-    new_node              = (struct node*)malloc(sizeof(struct node));
-    if (new_node == NULL) {
-        exit(-1);
+    Queue* temp = NULL;
+    temp        = (Queue*)malloc(sizeof(Queue));
+    if (temp == NULL) {
+        exit(-1);  // Malloc failed
         return NULL;
     }
-    new_node->value = value;
-    new_node->next  = NULL;
-    if (queue == NULL) {
-        queue = new_node;
-    } else {
-        while (queue->next != NULL) {
-            queue = queue->next;
-        }
-        queue->next = new_node;
+    temp->value = value;
+    temp->next  = NULL;
+    if (queue == NULL)
+        queue = temp;
+    else {
+        while (queue->next != NULL) queue = queue->next;
+        queue->next = temp;
     }
-    return new_node;
+    return temp;
 }
 
-struct node* dequeue(struct node* queue)
+Queue* dequeue(Queue* queue)
 {
-    struct node* temp;
+    Queue* temp;
     if (queue == NULL) {
         return NULL;
     } else {
