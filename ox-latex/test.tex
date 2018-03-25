@@ -1,0 +1,53 @@
+% Created 2018-03-25 Sun 13:03
+% Intended LaTeX compiler: pdflatex
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{listings}
+\author{Justin Kaipada}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Justin Kaipada},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.3.2 (Org mode 9.1.6)},
+ pdflang={English}}
+\begin{document}
+
+
+
+\section*{Testing}
+\label{sec:orgbb8df63}
+This is a test-file for exporting org to latex with formatted code
+
+\lstset{language=C++,label= ,caption= ,captionpos=b,numbers=none}
+\begin{lstlisting}
+class Foo
+{
+   public:
+    Foo() {}
+    virtual Bar run() = 0;
+    virtual ~Foo() {}
+    int pop_size;                      // Population size
+    unsigned int max_num_evaluations;
+}
+
+int main()
+{
+std::cout << "Is this broken ?\n";
+}
+\end{lstlisting}
+\end{document}

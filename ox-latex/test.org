@@ -1,0 +1,25 @@
+#+OPTIONS: toc:nil num:nil
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt]
+#+LATEX_HEADER: \usepackage{listings}
+
+
+* Testing
+This is a test-file for exporting org to latex with formatted code
+
+#+BEGIN_SRC C++
+class Foo
+{
+   public:
+    Foo() {}
+    virtual Bar run() = 0;
+    virtual ~Foo() {}
+    int pop_size;                      // Population size
+    unsigned int max_num_evaluations;
+}
+
+int main()
+{
+std::cout << "Is this broken ?\n";
+}
+#+END_SRC
