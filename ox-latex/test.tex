@@ -1,4 +1,4 @@
-% Created 2018-03-26 Mon 09:11
+% Created 2018-03-26 Mon 09:45
 % Intended LaTeX compiler: pdflatex
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
@@ -15,35 +15,32 @@
 \usepackage{capt-of}
 \usepackage{hyperref}
 \usepackage{listings}
-\usepackage{xcolor}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{dred}{rgb}{0.545,0,0}
-\definecolor{dblue}{rgb}{0,0,0.545}
-\definecolor{lgrey}{rgb}{0.9,0.9,0.9}
-\definecolor{gray}{rgb}{0.4,0.4,0.4}
-\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\usepackage{inconsolata}
+\usepackage{xcolor-solarized}
 \lstdefinelanguage{cpp}{
-backgroundcolor=\color{lgrey},
-basicstyle=\footnotesize \ttfamily \color{black} \bfseries,
-breakatwhitespace=false,
-breaklines=true,
-captionpos=b,
-commentstyle=\color{dkgreen},
+language=C++,
+morekeywords={cerr,exit,string},
 deletekeywords={...},
 escapeinside={\%*}{*)},
-frame=single,
-language=C++,
-keywordstyle=\color{purple},
-morekeywords={BRIEFDescriptorConfig,string,TiXmlNode,DetectorDescriptorConfigContainer,istringstream,cerr,exit},
-identifierstyle=\color{black},
-stringstyle=\color{blue},
-rulecolor=\color{black},
 showspaces=false,
 showstringspaces=false,
 showtabs=false,
 stepnumber=1,
-tabsize=5,
-title=\lstname,
+tabsize=4,
+breakatwhitespace=false,
+breaklines=true,
+backgroundcolor=\color{solarized-base3},
+basicstyle=\footnotesize\ttfamily\color{solarized-base0},
+commentstyle=\itshape\color{solarized-base01},
+keywordstyle=\color{solarized-green},
+identifierstyle=\color{solarized-blue},
+stringstyle=\color{solarized-cyan},
+moredelim = *[l][\color{solarized-orange}]{\#},
+moredelim = **[s][\color{solarized-cyan}]{<}{>},
+rulecolor=\color{black},
+literate={{\%d}}{{\textcolor{solarized-red}{\%d}}}2
+{{\%2d}}{{\textcolor{solarized-red}{\%2d}}}3
+{{\\n}}{{\textcolor{solarized-red}{\textbackslash{}n}}}2,
 }
 \author{Justin Kaipada}
 \date{\today}
@@ -59,10 +56,10 @@ title=\lstname,
 
 
 \section*{Testing}
-\label{sec:orgf81c749}
+\label{sec:org998434b}
 This is a test-file for exporting org to latex with formatted code
 
-\lstset{language=C++,label= ,caption= ,captionpos=b,numbers=none,frame=single,numbers=left,language=cpp}
+\lstset{language=C++,label= ,caption= ,captionpos=b,numbers=none,language=cpp,numbers=none}
 \begin{lstlisting}
 class Foo
 {
@@ -70,13 +67,13 @@ class Foo
     Foo() {}
     virtual Bar run() = 0;
     virtual ~Foo() {}
-    int pop_size;
+    int pop_size; // Comments
     unsigned int max_num_evaluations;
 }
 
 int main()
 {
-std::cout << "Is this broken ?\n";
+    std::cout << "Is this broken ?\n";
 }
 \end{lstlisting}
 \end{document}

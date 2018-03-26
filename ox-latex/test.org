@@ -2,41 +2,38 @@
 #+LATEX_CLASS: article
 #+LATEX_CLASS_OPTIONS: [a4paper,12pt]
 #+LATEX_HEADER: \usepackage{listings}
-#+LATEX_HEADER: \usepackage{xcolor}
-#+LATEX_HEADER: \definecolor{dkgreen}{rgb}{0,0.6,0}
-#+LATEX_HEADER: \definecolor{dred}{rgb}{0.545,0,0}
-#+LATEX_HEADER: \definecolor{dblue}{rgb}{0,0,0.545}
-#+LATEX_HEADER: \definecolor{lgrey}{rgb}{0.9,0.9,0.9}
-#+LATEX_HEADER: \definecolor{gray}{rgb}{0.4,0.4,0.4}
-#+LATEX_HEADER: \definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+#+LATEX_HEADER: \usepackage{inconsolata}
+#+LATEX_HEADER: \usepackage{xcolor-solarized}
 #+LATEX_HEADER: \lstdefinelanguage{cpp}{
-#+LATEX_HEADER:  backgroundcolor=\color{lgrey},
-#+LATEX_HEADER:  basicstyle=\footnotesize \ttfamily \color{black} \bfseries,
-#+LATEX_HEADER:  breakatwhitespace=false,
-#+LATEX_HEADER:  breaklines=true,
-#+LATEX_HEADER:  captionpos=b,
-#+LATEX_HEADER:  commentstyle=\color{dkgreen},
-#+LATEX_HEADER:  deletekeywords={...},
-#+LATEX_HEADER:  escapeinside={\%*}{*)},
-#+LATEX_HEADER:  frame=single,
-#+LATEX_HEADER:  language=C++,
-#+LATEX_HEADER:  keywordstyle=\color{purple},
-#+LATEX_HEADER:  morekeywords={BRIEFDescriptorConfig,string,TiXmlNode,DetectorDescriptorConfigContainer,istringstream,cerr,exit},
-#+LATEX_HEADER:  identifierstyle=\color{black},
-#+LATEX_HEADER:  stringstyle=\color{blue},
-#+LATEX_HEADER:  rulecolor=\color{black},
-#+LATEX_HEADER:  showspaces=false,
-#+LATEX_HEADER:  showstringspaces=false,
-#+LATEX_HEADER:  showtabs=false,
-#+LATEX_HEADER:  stepnumber=1,
-#+LATEX_HEADER:  tabsize=5,
-#+LATEX_HEADER:  title=\lstname,
+#+LATEX_HEADER: language=C++,
+#+LATEX_HEADER: morekeywords={cerr,exit,string},
+#+LATEX_HEADER: deletekeywords={...},
+#+LATEX_HEADER: escapeinside={\%*}{*)},
+#+LATEX_HEADER: showspaces=false,
+#+LATEX_HEADER: showstringspaces=false,
+#+LATEX_HEADER: showtabs=false,
+#+LATEX_HEADER: stepnumber=1,
+#+LATEX_HEADER: tabsize=4,
+#+LATEX_HEADER: breakatwhitespace=false,
+#+LATEX_HEADER: breaklines=true,
+#+LATEX_HEADER: backgroundcolor=\color{solarized-base3},
+#+LATEX_HEADER: basicstyle=\footnotesize\ttfamily\color{solarized-base0},
+#+LATEX_HEADER: commentstyle=\itshape\color{solarized-base01},
+#+LATEX_HEADER: keywordstyle=\color{solarized-green},
+#+LATEX_HEADER: identifierstyle=\color{solarized-blue},
+#+LATEX_HEADER: stringstyle=\color{solarized-cyan},
+#+LATEX_HEADER: moredelim = *[l][\color{solarized-orange}]{\#},
+#+LATEX_HEADER: moredelim = **[s][\color{solarized-cyan}]{<}{>},
+#+LATEX_HEADER: rulecolor=\color{black},
+#+LATEX_HEADER: literate={{\%d}}{{\textcolor{solarized-red}{\%d}}}2
+#+LATEX_HEADER:           {{\%2d}}{{\textcolor{solarized-red}{\%2d}}}3
+#+LATEX_HEADER:           {{\\n}}{{\textcolor{solarized-red}{\textbackslash{}n}}}2,
 #+LATEX_HEADER: }
 
 * Testing
 This is a test-file for exporting org to latex with formatted code
 
-#+ATTR_LATEX: :options frame=single,numbers=left,language=cpp
+#+ATTR_LATEX: :options language=cpp,numbers=none
 #+BEGIN_SRC C++
 class Foo
 {
@@ -44,12 +41,12 @@ class Foo
     Foo() {}
     virtual Bar run() = 0;
     virtual ~Foo() {}
-    int pop_size;
+    int pop_size; // Comments
     unsigned int max_num_evaluations;
 }
 
 int main()
 {
-std::cout << "Is this broken ?\n";
+    std::cout << "Is this broken ?\n";
 }
 #+END_SRC
