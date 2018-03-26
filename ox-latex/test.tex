@@ -1,4 +1,4 @@
-% Created 2018-03-25 Sun 13:03
+% Created 2018-03-26 Mon 09:11
 % Intended LaTeX compiler: pdflatex
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
@@ -15,6 +15,36 @@
 \usepackage{capt-of}
 \usepackage{hyperref}
 \usepackage{listings}
+\usepackage{xcolor}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{dred}{rgb}{0.545,0,0}
+\definecolor{dblue}{rgb}{0,0,0.545}
+\definecolor{lgrey}{rgb}{0.9,0.9,0.9}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\lstdefinelanguage{cpp}{
+backgroundcolor=\color{lgrey},
+basicstyle=\footnotesize \ttfamily \color{black} \bfseries,
+breakatwhitespace=false,
+breaklines=true,
+captionpos=b,
+commentstyle=\color{dkgreen},
+deletekeywords={...},
+escapeinside={\%*}{*)},
+frame=single,
+language=C++,
+keywordstyle=\color{purple},
+morekeywords={BRIEFDescriptorConfig,string,TiXmlNode,DetectorDescriptorConfigContainer,istringstream,cerr,exit},
+identifierstyle=\color{black},
+stringstyle=\color{blue},
+rulecolor=\color{black},
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+stepnumber=1,
+tabsize=5,
+title=\lstname,
+}
 \author{Justin Kaipada}
 \date{\today}
 \title{}
@@ -23,17 +53,16 @@
  pdftitle={},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 25.3.2 (Org mode 9.1.6)},
+ pdfcreator={Emacs 25.3.1 (Org mode 9.1.6)},
  pdflang={English}}
 \begin{document}
 
 
-
 \section*{Testing}
-\label{sec:orgbb8df63}
+\label{sec:orgf81c749}
 This is a test-file for exporting org to latex with formatted code
 
-\lstset{language=C++,label= ,caption= ,captionpos=b,numbers=none}
+\lstset{language=C++,label= ,caption= ,captionpos=b,numbers=none,frame=single,numbers=left,language=cpp}
 \begin{lstlisting}
 class Foo
 {
@@ -41,7 +70,7 @@ class Foo
     Foo() {}
     virtual Bar run() = 0;
     virtual ~Foo() {}
-    int pop_size;                      // Population size
+    int pop_size;
     unsigned int max_num_evaluations;
 }
 

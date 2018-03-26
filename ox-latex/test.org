@@ -2,11 +2,41 @@
 #+LATEX_CLASS: article
 #+LATEX_CLASS_OPTIONS: [a4paper,12pt]
 #+LATEX_HEADER: \usepackage{listings}
-
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \definecolor{dkgreen}{rgb}{0,0.6,0}
+#+LATEX_HEADER: \definecolor{dred}{rgb}{0.545,0,0}
+#+LATEX_HEADER: \definecolor{dblue}{rgb}{0,0,0.545}
+#+LATEX_HEADER: \definecolor{lgrey}{rgb}{0.9,0.9,0.9}
+#+LATEX_HEADER: \definecolor{gray}{rgb}{0.4,0.4,0.4}
+#+LATEX_HEADER: \definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+#+LATEX_HEADER: \lstdefinelanguage{cpp}{
+#+LATEX_HEADER:  backgroundcolor=\color{lgrey},
+#+LATEX_HEADER:  basicstyle=\footnotesize \ttfamily \color{black} \bfseries,
+#+LATEX_HEADER:  breakatwhitespace=false,
+#+LATEX_HEADER:  breaklines=true,
+#+LATEX_HEADER:  captionpos=b,
+#+LATEX_HEADER:  commentstyle=\color{dkgreen},
+#+LATEX_HEADER:  deletekeywords={...},
+#+LATEX_HEADER:  escapeinside={\%*}{*)},
+#+LATEX_HEADER:  frame=single,
+#+LATEX_HEADER:  language=C++,
+#+LATEX_HEADER:  keywordstyle=\color{purple},
+#+LATEX_HEADER:  morekeywords={BRIEFDescriptorConfig,string,TiXmlNode,DetectorDescriptorConfigContainer,istringstream,cerr,exit},
+#+LATEX_HEADER:  identifierstyle=\color{black},
+#+LATEX_HEADER:  stringstyle=\color{blue},
+#+LATEX_HEADER:  rulecolor=\color{black},
+#+LATEX_HEADER:  showspaces=false,
+#+LATEX_HEADER:  showstringspaces=false,
+#+LATEX_HEADER:  showtabs=false,
+#+LATEX_HEADER:  stepnumber=1,
+#+LATEX_HEADER:  tabsize=5,
+#+LATEX_HEADER:  title=\lstname,
+#+LATEX_HEADER: }
 
 * Testing
 This is a test-file for exporting org to latex with formatted code
 
+#+ATTR_LATEX: :options frame=single,numbers=left,language=cpp
 #+BEGIN_SRC C++
 class Foo
 {
@@ -14,7 +44,7 @@ class Foo
     Foo() {}
     virtual Bar run() = 0;
     virtual ~Foo() {}
-    int pop_size;                      // Population size
+    int pop_size;
     unsigned int max_num_evaluations;
 }
 
