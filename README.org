@@ -2,8 +2,9 @@
 
 * Sandman
 
-#+CAPTION: This is the cover image, a picture of sandman from Spiderman
-#+html: <p align="center"><img src="/cover.png" /></p>
+#+CAPTION: This is the cover image, a picture of Sandman from Spiderman
+#+ATTR_HTML: :align center
+[[./cover.png]]
 
 [[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPLv3-blue.svg]]
 
