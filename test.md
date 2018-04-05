@@ -8,9 +8,9 @@ malesuada eu. Ut nec arcu ac tortor tempor venenatis ac maximus
 eros. Maecenas id metus pharetra, blandit orci in, suscipit
 ligula. Maecenas malesuada enim nec leo placerat tincidunt.
 
-![test changeing size](/cover.png){:height="50%" width="50%"}
+![test changeing size](/cover.png =50x50)
 
-![test alignment](/cover.png){:align="center"}
+![test alignment](/cover.png =align="center")
 
 Ut ac convallis mi. Vivamus tempus rutrum lorem at scelerisque. Sed
 vel suscipit leo, eu elementum metus. Class aptent taciti sociosqu ad
