@@ -21,7 +21,7 @@ to you on the same day guaranteed. 👍 👍 .
 
 This is a sandbox and I am *SANDMAN*
 
-[[file:test.org][This is a test!]]
+[[file:test.md][This is a test!]]
 
 * Writing ~Readme~ s
 

@@ -1,3 +1,5 @@
+# Testing
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elit
 urna, convallis eu sodales vel, pharetra et ipsum. Suspendisse
 potenti. Proin laoreet in nisi a vulputate. Praesent vitae mi laoreet,
@@ -6,20 +8,7 @@ malesuada eu. Ut nec arcu ac tortor tempor venenatis ac maximus
 eros. Maecenas id metus pharetra, blandit orci in, suscipit
 ligula. Maecenas malesuada enim nec leo placerat tincidunt.
 
-Cras malesuada molestie ex eu elementum. Aliquam diam lectus, pharetra
-eu vulputate at, vestibulum et velit. Curabitur posuere mi vel sem
-bibendum, nec sagittis metus laoreet. Pellentesque pharetra eleifend
-augue, non mollis quam viverra in. Sed molestie vehicula neque nec
-egestas. Nulla eleifend justo quis tincidunt pellentesque. Etiam
-faucibus, tortor id aliquam posuere, nisi ex sodales libero, non
-malesuada dui felis vulputate augue. Quisque porttitor mauris ligula,
-eu lobortis nulla condimentum id. Etiam ultrices interdum mi, volutpat
-pulvinar orci malesuada in. Etiam sollicitudin eu elit a
-dapibus. Aenean gravida nisi elit, sed commodo orci elementum
-eget. Etiam dapibus nisl eu leo pellentesque, ac porttitor metus
-condimentum. Pellentesque convallis, erat auctor mollis tristique,
-odio dolor pharetra purus, pharetra cursus nibh purus in
-turpis. Phasellus hendrerit tincidunt risus laoreet pretium.
+![test changeing size](/cover.png)
 
 Ut ac convallis mi. Vivamus tempus rutrum lorem at scelerisque. Sed
 vel suscipit leo, eu elementum metus. Class aptent taciti sociosqu ad
