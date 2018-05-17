@@ -15,6 +15,7 @@
 build/
 bin/
 external/
+compile_commands.json
 
 # Ignore windows files for the system
 *.ini
