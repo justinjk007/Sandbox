@@ -23,11 +23,9 @@ else{
 }
 
 print "\nTesting String matching\n";
-# $foo = "
-# Garbage directory
-# /test/this/is/a/directory
-# /this/is/another/foo\nThisd is is\nDrop stuff testing\nRandom stuff emacs is great";
-
-$foo = "stop test stopping testing stopped";
-$foo =~ /^stop/;
+$foo = "
+Garbage directory
+/test/this/is/a/directory
+/this/is/another/foo\nThisd is is\nDrop stuff testing\nRandom stuff emacs is great";
+$foo =~ /^\/test.*$/;
 print "Drop in:\n$foo\n";
