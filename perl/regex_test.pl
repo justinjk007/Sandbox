@@ -27,5 +27,5 @@ $foo = "
 Garbage directory
 /test/this/is/a/directory
 /this/is/another/foo\nThisd is is\nDrop stuff testing\nRandom stuff emacs is great";
-$foo =~ /^\/test.*$/;
-print "Drop in:\n$foo\n";
+$foo =~ /(\/test.*)/m;
+print "$1\n";
