@@ -5,8 +5,9 @@
 int main()
 {
     // File for input
+    const char* file_name = "FooBar.csv";
     std::ifstream file;
-    file.open("FooBar.csv", std::ios::in);
+    file.open(file_name, std::ios::in);
     if (!file) {
         std::cerr << "Unable to open csv file";
         exit(1);
