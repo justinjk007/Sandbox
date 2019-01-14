@@ -1,1 +1,1 @@
-icalendar
+ics
