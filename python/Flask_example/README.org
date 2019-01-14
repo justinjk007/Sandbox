@@ -1,0 +1,17 @@
+* Setup
+
+Make a new virtual environment and Install requirements
+
+#+BEGIN_SRC sh
+pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+deactivate # To deactivate environment after use
+#+END_SRC
+
+To run the server
+#+begin_src sh
+export FLASK_APP=main.py
+flask run
+#+end_src
