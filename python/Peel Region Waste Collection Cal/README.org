@@ -11,3 +11,7 @@ venv/bin/python2.7 main.py
 
 deactivate # To deactivate environment after use
 #+END_SRC
+
+
+Import the =Waste disposal calendar.ics= into your calendar. I suggest
+creating new calendar anywhere because loaded file cannot be unloaded.

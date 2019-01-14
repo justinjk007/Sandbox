@@ -2,21 +2,20 @@ from datetime import datetime
 from ics import Calendar, Event
 from collections import OrderedDict
 
-file_data = list() # Raw file data
-dates_dictionary = OrderedDict() # Dictionary with Dates and number of entries for each day
-dates_dictionary_formatted = OrderedDict() # Same dictionary formatted dates
-description = list() # Store the description of events happening each day
-YEAR = '2019'
-
-def parse_file(fname):
-    with open(fname) as f:
-        content = f.readlines()
-    content = [x.strip() for x in content] # Remove whitespace and newline
-    content = filter(None, content) # remove empty items
-    return content
+def rreplace(string, old, new, times):
+    li = string.rsplit(old, times)
+    return new.join(li)
 
 def main():
-    file_data = parse_file("raw_data.txt")
+    dates_dictionary = OrderedDict() # Dictionary with Dates and number of entries for each day
+    dates_dictionary_formatted = OrderedDict() # Same dictionary formatted dates
+    description = list() # Store the description of events happening each day
+    YEAR = '2019'
+    # Parse file to get data
+    with open("raw_data.txt") as f:
+        content = f.readlines()
+    content = [x.strip() for x in content] # Remove whitespace and newline
+    file_data = filter(None, content) # remove empty items
     # Parse data into Dates and events
     date = ''
     event_num = 0
@@ -39,16 +38,17 @@ def main():
         dates_dictionary_formatted.update({formatted_date:y})
     # Format data into ics file
     c = Calendar()
-    description_for_the_day = '' 
+    description_for_the_day = '' # Initialize empty description so it can be appended
     for x, y in dates_dictionary_formatted.items():
         e = Event()
         e.name = "Waste Collection day"
         for i in range(y):
             description_for_the_day += description.pop(0)
-            description_for_the_day += ','
-        description_for_the_day = description_for_the_day[:-1] # Remove the comma at the end
+            description_for_the_day += ', '
+        description_for_the_day = description_for_the_day[:-2] # Remove the comma at the end
         print 'Date: '+x
-        print 'Number of events: '+str(y)
+        # print 'Number of events: '+str(y)
+        description_for_the_day = rreplace(description_for_the_day, ',', ' and', 1) # Replace last comma with an and
         print description_for_the_day
         e.begin = x+' 00:00:00'
         e.end = x+' 12:00:00'
@@ -56,11 +56,12 @@ def main():
         e.description = description_for_the_day
         c.events.add(e)
         description_for_the_day = '' # Reset this
-        del e
+        del e # Delete event content after appending to the calendar
     # Write data into ics file
-    print('Creating ics file')
-    with open('my.ics', 'w') as my_file:
+    print('\nCreating ics file...')
+    with open('Waste disposal calendar.ics', 'w') as my_file:
         my_file.writelines(c)
+    print('ics file generated')
 
 if __name__ == "__main__":
     main()
