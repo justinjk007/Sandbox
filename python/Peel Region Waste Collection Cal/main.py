@@ -1,18 +1,11 @@
 from datetime import datetime
-# from ics import Calendar, Event
+from ics import Calendar, Event
 
 
-# c = Calendar()
-# e = Event()
-# e.name = "My cool event"
-# e.begin = '20190114 00:00:00'
-# c.events.add(e)
-
-# with open('my.ics', 'w') as my_file:
-#     my_file.writelines(c)
 
 file_data = list() # Raw file data
 dates_dictionary = dict() # Dictionary with Dates and number of entries correspinding to each day
+dates_dictionary_formatted = dict() # Same dictionary formatted dates
 description = list() # Store the description of events happening each day
 YEAR = '2019'
 
@@ -42,11 +35,31 @@ def main():
             description.append(x) # This is a waste type, not a date
     # Convert dates into needed format
     # https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior
-    date = datetime.strptime('Monday, February 4'+' '+YEAR, '%A, %B %d %Y') # Strip date
-    print date.strftime('%Y%m%d') # Format date from stripped date
-
-    
-
+    for x, y in dates_dictionary.items():
+        date = datetime.strptime(x+' '+YEAR, '%A, %B %d %Y') # Strip date
+        formatted_date = date.strftime('%Y%m%d') # Format date from stripped date
+        dates_dictionary_formatted.update({formatted_date:y})
+    # Format data into ics file
+    c = Calendar()
+    description_for_the_day = '' 
+    for x, y in dates_dictionary_formatted.items():
+        e = Event()
+        e.name = "Waste Collection day"
+        for i in range(y):
+            description_for_the_day += description.pop(0)
+            description_for_the_day += ','
+        description_for_the_day = description_for_the_day[:-1] # Remove the comma at the end
+        print x
+        print description_for_the_day
+        e.begin = x+' 00:00:00'
+        e.end = x+' 12:00:00'
+        e.make_all_day() # Make the event all day
+        e.description = description_for_the_day
+        c.events.add(e)
+        description_for_the_day = '' # Reset this
+    # Write data into ics file
+    with open('my.ics', 'w') as my_file:
+        my_file.writelines(c)
 
 if __name__ == "__main__":
     main()
