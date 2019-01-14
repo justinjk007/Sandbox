@@ -1,11 +1,10 @@
 from datetime import datetime
 from ics import Calendar, Event
-
-
+from collections import OrderedDict
 
 file_data = list() # Raw file data
-dates_dictionary = dict() # Dictionary with Dates and number of entries correspinding to each day
-dates_dictionary_formatted = dict() # Same dictionary formatted dates
+dates_dictionary = OrderedDict() # Dictionary with Dates and number of entries for each day
+dates_dictionary_formatted = OrderedDict() # Same dictionary formatted dates
 description = list() # Store the description of events happening each day
 YEAR = '2019'
 
@@ -18,7 +17,6 @@ def parse_file(fname):
 
 def main():
     file_data = parse_file("raw_data.txt")
-
     # Parse data into Dates and events
     date = ''
     event_num = 0
@@ -49,7 +47,8 @@ def main():
             description_for_the_day += description.pop(0)
             description_for_the_day += ','
         description_for_the_day = description_for_the_day[:-1] # Remove the comma at the end
-        print x
+        print 'Date: '+x
+        print 'Number of events: '+str(y)
         print description_for_the_day
         e.begin = x+' 00:00:00'
         e.end = x+' 12:00:00'
@@ -57,7 +56,9 @@ def main():
         e.description = description_for_the_day
         c.events.add(e)
         description_for_the_day = '' # Reset this
+        del e
     # Write data into ics file
+    print('Creating ics file')
     with open('my.ics', 'w') as my_file:
         my_file.writelines(c)
 
