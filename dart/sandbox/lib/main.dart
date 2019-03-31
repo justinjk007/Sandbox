@@ -11,8 +11,21 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
-        body: Center(
-          child: new CustomCard(),
+        body: ListView(
+          children: [
+            new CustomCard(),
+            new CustomCard(),
+            new CustomCard(),
+            new CustomCard(),
+            new CustomCard(),
+            new CustomCard(),
+            new CustomCard(),
+            new CustomCard(),
+            new CustomCard(),
+            new CustomCard(),
+            new CustomCard(),
+            new CustomCard(),
+          ],
         ),
       ),
     );
@@ -36,6 +49,7 @@ class CustomCard extends StatelessWidget {
       child: Material(
         elevation: 3.0,
         shadowColor: Colors.red[300],
+        color: Colors.indigo[50],
         borderRadius: new BorderRadius.circular(4.0),
         child: Container(
           height: 200,
