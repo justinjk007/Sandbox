@@ -16,15 +16,6 @@ class MyApp extends StatelessWidget {
             new CustomCard(),
             new CustomCard(),
             new CustomCard(),
-            new CustomCard(),
-            new CustomCard(),
-            new CustomCard(),
-            new CustomCard(),
-            new CustomCard(),
-            new CustomCard(),
-            new CustomCard(),
-            new CustomCard(),
-            new CustomCard(),
           ],
         ),
       ),
@@ -46,143 +37,173 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext ctxt) {
     return Padding(
       padding: EdgeInsets.all(10.0),
-      child: Material(
-        elevation: 3.0,
-        shadowColor: Colors.red[300],
-        color: Colors.indigo[50],
-        borderRadius: new BorderRadius.circular(4.0),
-        child: Container(
-          height: 200,
-          width: double.infinity,
-          child: Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Stack(
-              children: [
-                // Text(
-                //   "50 x 5",
-                //   style: TextStyle(
-                //     fontWeight: FontWeight.bold,
-                //     fontSize: 40,
-                //   ),
-                // ),
-                Row(
-                  children: [
+      child: Container(
+        decoration: new BoxDecoration(
+          boxShadow: [
+            new BoxShadow(
+              color: Colors.red[100],
+              blurRadius: 15.0,
+            ),
+          ],
+        ),
+        child: Material(
+          // elevation: 1.0,
+          borderRadius: new BorderRadius.circular(4.0),
+          child: Container(
+            height: 100,
+            width: double.infinity,
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Row(children: [
                     Text(
-                      "5 x ",
+                      "Warmup set 1",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 17,
+                        fontSize: 10,
                       ),
                     ),
-                    Image.asset(
-                      'assets/2.5.png',
-                      width: 17,
-                      height: 17,
-                      fit: BoxFit.cover,
-                    ),
+                    Expanded(child: SizedBox()),
                     Text(
-                      " · ",
+                      "50 x 5",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 17,
+                        fontSize: 30,
                       ),
                     ),
-                    Text(
-                      "5 x ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+                  ]),
+                  SizedBox(
+                    // This is a custom divider
+                    height: 10.0,
+                    child: new Center(
+                      child: new Container(
+                        margin: new EdgeInsetsDirectional.only(
+                            start: 1.0, end: 1.0),
+                        height: 2.0,
+                        color: Colors.red[100],
                       ),
                     ),
-                    Image.asset(
-                      'assets/5.png',
-                      width: 17,
-                      height: 17,
-                      fit: BoxFit.cover,
-                    ),
-                    Text(
-                      " · ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "5 x ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
                       ),
-                    ),
-                    Text(
-                      "5 x ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+                      Image.asset(
+                        'assets/2.5.png',
+                        width: 17,
+                        height: 17,
+                        fit: BoxFit.cover,
                       ),
-                    ),
-                    Image.asset(
-                      'assets/10.png',
-                      width: 17,
-                      height: 17,
-                      fit: BoxFit.cover,
-                    ),
-                    Text(
-                      " · ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+                      Text(
+                        " · ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
                       ),
-                    ),
-                    Text(
-                      "5 x ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+                      Text(
+                        "5 x ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
                       ),
-                    ),
-                    Image.asset(
-                      'assets/25.png',
-                      width: 17,
-                      height: 17,
-                      fit: BoxFit.cover,
-                    ),
-                    Text(
-                      " · ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+                      Image.asset(
+                        'assets/5.png',
+                        width: 17,
+                        height: 17,
+                        fit: BoxFit.cover,
                       ),
-                    ),
-                    Text(
-                      "5 x ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+                      Text(
+                        " · ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
                       ),
-                    ),
-                    Image.asset(
-                      'assets/35.png',
-                      width: 17,
-                      height: 17,
-                      fit: BoxFit.cover,
-                    ),
-                    Text(
-                      " · ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+                      Text(
+                        "5 x ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
                       ),
-                    ),
-                    Text(
-                      "5 x ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+                      Image.asset(
+                        'assets/10.png',
+                        width: 17,
+                        height: 17,
+                        fit: BoxFit.cover,
                       ),
-                    ),
-                    Image.asset(
-                      'assets/45.png',
-                      width: 17,
-                      height: 17,
-                      fit: BoxFit.cover,
-                    ),
-                  ],
-                )
-              ],
+                      Text(
+                        " · ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
+                      ),
+                      Text(
+                        "5 x ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
+                      ),
+                      Image.asset(
+                        'assets/25.png',
+                        width: 17,
+                        height: 17,
+                        fit: BoxFit.cover,
+                      ),
+                      Text(
+                        " · ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
+                      ),
+                      Text(
+                        "5 x ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
+                      ),
+                      Image.asset(
+                        'assets/35.png',
+                        width: 17,
+                        height: 17,
+                        fit: BoxFit.cover,
+                      ),
+                      Text(
+                        " · ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
+                      ),
+                      Text(
+                        "5 x ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
+                      ),
+                      Image.asset(
+                        'assets/45.png',
+                        width: 17,
+                        height: 17,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
