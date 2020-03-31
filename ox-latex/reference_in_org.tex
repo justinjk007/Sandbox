@@ -1,0 +1,57 @@
+% Created 2020-03-31 Tue 16:49
+% Intended LaTeX compiler: pdflatex
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[natbib=true]{biblatex} \DeclareFieldFormat{apacase}{#1} \addbibresource{~/org/resources/bibliography/refs.bib}
+\usepackage{parskip}
+\author{Justin Kaipada}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Justin Kaipada},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.2.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+
+\section{Computer Vision}
+\label{sec:org8c8685b}
+\subsection{Image-to-Image Translation}
+\label{sec:org48ab987}
+\subparagraph{CycleGAN: Unpaired Image-to-Image Translation using}
+\label{sec:org9001b90}
+Cycle-Consistent Adversarial Networks citep:zhu2017CycleGAN.
+This is one of my favorite papers. The authors extending some
+of the classic work done in Pix2Pix citep:isola2017pix2pix to
+\emph{unpaired} sets of images. At the core of the CycleGAN
+procedure are two Generative Adversarial Networks that learn
+to map images between two domains. The key addition that makes
+this process work is an additional loss term, which enforces
+that images passed through both generators should be as close
+as possible to the input image. This has practical motivation:
+if we translate one way and then translate back, we should
+expect the input to be unchanged. The results are impressive
+and eye catching. This work inspired a paper of mine:
+GeneSIS-RT citep:stein2018genesisrt.
+
+\section*{References}
+\label{sec:org1d6d401}
+\printbibliography[heading=none]
+\end{document}
