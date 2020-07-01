@@ -1,0 +1,20 @@
+* Setup
+
+This setup is to work with webpages which requires html files as the
+output and can't run node server(For example a wealthica add-on).
+
+Install browserify globally
+#+begin_src sh
+npm install -g browserify
+npm install -g live-server # for easy "serverifying""
+#+end_src
+
+Bundle deps
+#+begin_src sh
+browserify index.js -o build/bundle.js
+#+end_src
+
+Since you have npm scripts setup in package.json, run it using
+#+begin_src sh
+npm run build
+#+end_src
