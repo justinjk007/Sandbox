@@ -22,13 +22,3 @@ to you on the same day guaranteed. 👍 👍 .
 This is a sandbox and I am *SANDMAN*
 
 [[file:test.md][This is a test!]]
-
-* Writing ~Readme~ s
-
-Write =README= files as if you are explaining a younger yourself what is
-going on in your repository, as if the person looking at your code is
-a 6th grade student starting to learn +code+ programming.
-
-As mentioned above, although no readme's(mostly) are written in this
-repository, I will help you out if your stuck on something, don't just
-copy and paste to create a sandcastle for yourself with my sand ha ha.
