@@ -7,6 +7,9 @@ class Button extends Component {
     };
 
     render() {
+
+        // {this.props.children}, gets us what's inside the button tag
+	// Here we are replacing the button tag with our special div
         return (
             <div
                 className={`button ${this.isOperator(this.props.children) ? '' : 'operator'}`}
