@@ -13,12 +13,5 @@ help me to study & practice major algorithms and data Structures.
 Everything in here is me testing stuff out(even this =README=), isolated
 from the main project I am working on. So why have a repo for that you
 ask ?  Its just so that I can copy and paste it in the future
-.. /elohhel/
-
-You won't find any readme's in any of the projects because I don't get
-time to maintain them too. But you can open an issue and I will reply
-to you on the same day guaranteed. 👍 👍 .
-
-This is a sandbox and I am *SANDMAN*
 
 [[file:test.md][This is a test!]]
