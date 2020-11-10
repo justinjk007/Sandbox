@@ -1,5 +1,6 @@
 .button {
   display: flex;
+  cursor:pointer;
   height: 4em;
   flex: 1;
   justify-content: center;

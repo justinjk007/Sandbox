@@ -1,0 +1,13 @@
+.clearButton{
+  display: flex;
+  cursor: pointer;
+  height: 4em;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-weight: light;
+  font-size: 1.4em;
+  background-color: grey;
+  color: #fff;
+  outline: 1px solid #888;
+}
