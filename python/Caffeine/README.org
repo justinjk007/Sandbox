@@ -1,0 +1,13 @@
+Keep my Macbook own while I'm making coffee
+
+* Setup
+
+Make a new virtual environment and Install requirements
+
+#+BEGIN_SRC sh
+python3 -m pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+pip3 install -r requirements.txt
+deactivate # To deactivate environment after use
+#+END_SRC
