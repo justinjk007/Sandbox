@@ -11,3 +11,20 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 deactivate # To deactivate environment after use
 #+END_SRC
+
+Make it easier make coffee, put this in your bashrc
+#+begin_src sh
+function  making_coffee() {
+    cwd=$PWD
+    cd $HOME/Repos/Sandbox/python/Caffeine/
+    python3 -m pip install virtualenv > /dev/null
+    virtualenv venv > /dev/null
+    source venv/bin/activate
+    pip3 install -r requirements.txt > /dev/null
+    nohup python coffee.py > /dev/null &
+    deactivate # To deactivate environment after use
+    cd $cwd
+}
+export -f making_coffee
+alias coff='making_coffee'
+#+end_src
