@@ -7,4 +7,5 @@ while True:
   print(result)
   pyautogui.press('f14') # brightness down
   pyautogui.press('f15') # brightness up
+  print("Making coffee...")
   time.sleep(3*60)

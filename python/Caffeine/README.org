@@ -15,15 +15,12 @@ deactivate # To deactivate environment after use
 Make it easier make coffee, put this in your bashrc
 #+begin_src sh
 function  making_coffee() {
-    cwd=$PWD
     cd $HOME/Repos/Sandbox/python/Caffeine/
-    python3 -m pip install virtualenv > /dev/null
-    virtualenv venv > /dev/null
+    python3 -m pip install virtualenv > /dev/null 2>&1
+    virtualenv venv > /dev/null 2>&1
     source venv/bin/activate
-    pip3 install -r requirements.txt > /dev/null
-    nohup python coffee.py > /dev/null &
-    deactivate # To deactivate environment after use
-    cd $cwd
+    pip3 install -r requirements.txt > /dev/null 2>&1
+    python coffee.py
 }
 export -f making_coffee
 alias coff='making_coffee'
