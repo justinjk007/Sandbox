@@ -6,7 +6,7 @@ class ClearButton extends Component {
         return (
 		<div className="clearButton"
                 onClick={() => this.props.handleClear()}>
-		CLEAR
+		Clear
 		</div>
         );
     }
