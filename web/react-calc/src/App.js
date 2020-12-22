@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import './App.scss';
 
-import { Button } from 'carbon-components-react';
 import Input from './components/Input';
-// import CalcButton from './components/Button';
-// import ClearButton from './components/ClearButton';
-
+import ClearButton from './components/ClearButton';
+import CalcButton from './components/Button';
 
 class App extends Component  {
     constructor(props){
@@ -23,18 +21,18 @@ class App extends Component  {
 	this.setState({input: this.state.input + val});
     };
 
-    addDecimal = () => {
+    addDecimal = val => {
 	// Only add decimal if one doesn't exist already
 	if (this.state.input.indexOf(".") === -1) {
 	    // -1 returns means searched char doesn't exist
-	    this.setState({input: this.state.input + "."});
+	    this.setState({input: this.state.input + val});
 	}
     };
 
-    addZeroToInput = () => {
+    addZeroToInput = val => {
 	// Don't want zero to be added if area is empty
 	if (this.state.input !== "") {
-	    this.setState({input: this.state.input + "0" });
+	    this.setState({input: this.state.input + val });
 	}
     };
 
@@ -74,13 +72,13 @@ class App extends Component  {
 	    ans = parseInt(this.state.input)+parseInt(this.state.prevNum);
 	    this.setState({input: ans});
 	} else if (this.state.operator === "minus") {
-	    ans = parseInt(this.state.input)-parseInt(this.state.prevNum);
+	    ans = parseInt(this.state.prevNum)-parseInt(this.state.input);
 	    this.setState({input: ans});
 	} else if (this.state.operator === "cross") {
 	    ans = parseInt(this.state.input)*parseInt(this.state.prevNum);
 	    this.setState({input: ans});
 	} else if (this.state.operator === "slash") {
-	    ans = parseInt(this.state.input)/parseInt(this.state.prevNum);
+	    ans = parseInt(this.state.prevNum)/parseInt(this.state.input);
 	    this.setState({input: ans});
 	} else{
 	    this.setState({input: "Operator not supported!"});
@@ -95,31 +93,31 @@ class App extends Component  {
 	    <Input> {this.state.input} </Input>
 	    </div>
 	        <div className='row'>
-                    <Button kind="tertiary" onClick={() => this.addToInput(7)} >7</Button>
-                    <Button kind="tertiary" onClick={() => this.addToInput(8)} >8</Button>
-                    <Button kind="tertiary" onClick={() => this.addToInput(9)} >9</Button>
-                    <Button onClick={this.divide} >/</Button>
+                    <CalcButton handleClick={() => this.addToInput(7)} >7</CalcButton>
+                    <CalcButton handleClick={() => this.addToInput(8)} >8</CalcButton>
+                    <CalcButton handleClick={() => this.addToInput(9)} >9</CalcButton>
+                    <CalcButton handleClick={this.divide} >/</CalcButton>
                 </div>
                 <div className='row'>
-                    <Button kind="tertiary" onClick={() => this.addToInput(4)} >4</Button>
-                    <Button kind="tertiary" onClick={() => this.addToInput(5)} >5</Button>
-                    <Button kind="tertiary" onClick={() => this.addToInput(6)} >6</Button>
-                    <Button onClick={this.multiply} >*</Button>
+                    <CalcButton handleClick={() => this.addToInput(4)} >4</CalcButton>
+                    <CalcButton handleClick={() => this.addToInput(5)} >5</CalcButton>
+                    <CalcButton handleClick={() => this.addToInput(6)} >6</CalcButton>
+                    <CalcButton handleClick={this.multiply} >*</CalcButton>
                 </div>
                 <div className='row'>
-                    <Button kind="tertiary" onClick={() => this.addToInput(1)} >1</Button>
-                    <Button kind="tertiary" onClick={() => this.addToInput(2)} >2</Button>
-                    <Button kind="tertiary" onClick={() => this.addToInput(3)} >3</Button>
-                    <Button onClick={this.add} >+</Button>
+                    <CalcButton handleClick={() => this.addToInput(1)} >1</CalcButton>
+                    <CalcButton handleClick={() => this.addToInput(2)} >2</CalcButton>
+                    <CalcButton handleClick={() => this.addToInput(3)} >3</CalcButton>
+                    <CalcButton handleClick={this.add} >+</CalcButton>
                 </div>
                 <div className='row'>
-                    <Button onClick={this.addDecimal} >.</Button>
-                    <Button onClick={this.addZeroToInput} >0</Button>
-                    <Button onClick={this.eval} >=</Button>
-                    <Button onClick={this.subtract} >-</Button>
+                    <CalcButton handleClick={this.addDecimal} >.</CalcButton>
+                    <CalcButton handleClick={this.addZeroToInput} >0</CalcButton>
+                    <CalcButton handleClick={this.eval} >=</CalcButton>
+                    <CalcButton handleClick={this.subtract} >-</CalcButton>
                 </div>
                 <div className='row'>
-	            <Button kind="danger--tertiary" onClick={this.clearDisplay}>Clear</Button>
+	            <ClearButton handleClear={this.clearDisplay}></ClearButton>
                 </div>
             </div>
         </div>

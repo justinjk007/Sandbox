@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import './Input.css';
+import { Tile } from 'carbon-components-react';
+import './Input.scss';
 
 class Input extends Component {
     render() {
         return (
-		<div className="input">
+		<Tile className="input">
 		{this.props.children}
-		</div>
+		</Tile>
         );
     }
 }
