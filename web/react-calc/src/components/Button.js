@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Button.css';
+// import './Button.css';
 
-class Button extends Component {
+class CalcButton extends Component {
     isOperator = (val) => {
         return !isNaN(val) || val === '.' || val === '=';
     };
@@ -20,4 +20,4 @@ class Button extends Component {
         );
     }
 }
-export default Button;
+export default CalcButton;

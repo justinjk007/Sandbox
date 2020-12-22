@@ -11,7 +11,8 @@
     "carbon-icons": "^7.0.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.4"
+    "react-scripts": "^3.4.4",
+    "sass": "^1.29.0"
   },
   "scripts": {
     "start": "react-scripts start",
