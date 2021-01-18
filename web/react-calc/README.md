@@ -4,7 +4,7 @@ Tutorial https://www.youtube.com/watch?v=nImdvUVMfl0
 
 After adding carbon:
 
-![Calculator screenshot](./img/calc.png "React-Carbon-Calculator")
+![Calculator screenshot](./img/calc.png 'React-Carbon-Calculator')
 
 ## Available Scripts
 
