@@ -1,7 +1,7 @@
 import React from 'react';
 import Todo from './Todo';
-import { connect } from "react-redux";
-import {getTodos} from "../redux/selectors.js";
+import { connect } from 'react-redux';
+import { getTodos } from '../redux/selectors.js';
 
 const TodoList = ({ todos }) => (
   <ul className='todo-list'>
@@ -13,4 +13,4 @@ const TodoList = ({ todos }) => (
   </ul>
 );
 
-export default connect(state => ({ todos: getTodos(state) }))(TodoList);
+export default connect((state) => ({ todos: getTodos(state) }))(TodoList);
