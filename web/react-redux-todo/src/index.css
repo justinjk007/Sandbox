@@ -19,10 +19,23 @@
   font-family: monospace;
   cursor: pointer;
   line-height: 1.5;
+  color: blue;
 }
 .todo-item__text--completed {
   text-decoration: line-through;
-  color: lightgray;
+  color: lightblue;
+}
+
+.todo-item__tag {
+  font-family: monospace;
+  cursor: pointer;
+  line-height: 1.5;
+  color: green;
+  font-weight: bold;
+}
+.todo-item__tag--completed {
+  text-decoration: line-through;
+  color: lightgreen;
 }
 
 /** visibility filters **/
