@@ -1,0 +1,5 @@
+/venv
+/node_modules
+
+secret.py
+headers_auth.json

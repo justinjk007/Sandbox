@@ -1,0 +1,15 @@
+Automatically add recently added songs to the "All songs" playlist
+
+* Setup
+
+Make a new virtual environment and Install requirements
+
+#+BEGIN_SRC sh
+pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+deactivate # To deactivate environment after use
+#+END_SRC
+
+Read how to setup auth talked for Youtube Music Api here: https://ytmusicapi.readthedocs.io/en/latest/setup.html
