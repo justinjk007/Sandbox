@@ -1,5 +1,3 @@
-#+html: <img src="https://alphapapa.github.io/dont-tread-on-emacs/dont-tread-on-emacs-150.png" align="right"/>
-
 * Sandbox
 
 #+CAPTION: This is the cover image, a picture of Sandman
