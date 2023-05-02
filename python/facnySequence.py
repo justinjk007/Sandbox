@@ -18,6 +18,9 @@ class Fancy:
 
     def __init__(self):
         self.obj = []
+        self.add = 0
+        self.multiple = 1
+        self.operations
 
     def append(self, val: int) -> None:
         self.obj.append(val)
@@ -26,20 +29,21 @@ class Fancy:
     def addAll(self, inc: int) -> None:
         if(len(self.obj) == 0):
             pass
-        for i in range(0, len(self.obj)):
-            self.obj[i] = self.obj[i]+inc
+        self.add += inc
         # print(self.obj)
 
     def multAll(self, m: int) -> None:
         if(len(self.obj) == 0):
             pass
+        self.multiple *= m
+
         for i in range(0, len(self.obj)):
             self.obj[i] = self.obj[i]*m
         # print(self.obj)
 
     def getIndex(self, idx: int) -> int:
         try:
-            return self.obj[idx]
+            return self.obj[idx] % (pow(10, 9) + 7)
         except Exception as e:
             return -1
 
