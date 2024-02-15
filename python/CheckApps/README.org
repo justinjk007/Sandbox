@@ -1,0 +1,14 @@
+* Setup
+
+Make a new virtual environment and Install requirements
+
+#+BEGIN_SRC bash
+pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+#+END_SRC
+
+#+begin_src sh
+deactivate # To deactivate environment after use
+#+end_src
