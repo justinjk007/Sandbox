@@ -11,7 +11,7 @@ def send_welcome(message):
 @bot.message_handler(commands=['check'])
 def check_appointment(message):
     data = check_apps.check()
-    reply = f'Results: {data}!'
+    reply = f'Results: {data}'
     bot.reply_to(message, reply)
 
 bot.infinity_polling()
