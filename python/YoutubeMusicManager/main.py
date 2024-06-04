@@ -1,6 +1,6 @@
 import sys
 from ytmusicapi import YTMusic
-ytmusic = YTMusic('headers_auth.json')
+ytmusic = YTMusic('oauth.json')
 
 ## automatically add recently added songs to the "All songs" playlist
 ## so it can be downloaded in one go on the phone

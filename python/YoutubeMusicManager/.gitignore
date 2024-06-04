@@ -2,4 +2,5 @@
 /node_modules
 
 secret.py
+oauth.json
 headers_auth.json

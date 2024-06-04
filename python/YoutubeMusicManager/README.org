@@ -12,4 +12,4 @@ pip install -r requirements.txt
 deactivate # To deactivate environment after use
 #+END_SRC
 
-Read how to setup auth talked for Youtube Music Api here: https://ytmusicapi.readthedocs.io/en/latest/setup.html
+Read how to setup auth talked for Youtube Music Api here: https://ytmusicapi.readthedocs.io/en/stable/setup/oauth.html
